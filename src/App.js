@@ -11,14 +11,98 @@ import {
     XIcon,
 } from '@heroicons/react/outline'
 import { ChevronRightIcon, ExternalLinkIcon } from '@heroicons/react/solid'
-import Spline from '@splinetool/react-spline';
 
-
+const skills = [
+    {
+        id: 1,
+        title: 'HTML5',
+        extra: 'Tags, Attributes, W3, Semantic',
+        imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/1024px-HTML5_Badge.svg.png'
+    },
+    {
+        id: 2,
+        title: 'CSS3',
+        extra: 'Flex, Grid, Animation',
+        imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/240px-CSS3_logo.svg.png',
+    },
+    {
+        id: 3,
+        title: 'JavaScript',
+        extra: 'OOP, FP, Algorithm, ES6-12',
+        imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
+    },
+    {
+        id: 4,
+        title: 'TypeScript',
+        extra: 'Types, Generics, Interfaces, Decorators',
+        imageUrl:
+            'https://seeklogo.com/images/T/typescript-logo-B29A3F462D-seeklogo.com.png',
+    },
+    {
+        id: 5,
+        title: 'React',
+        extra: 'Classes, Hooks, Framer',
+        imageUrl:
+            'https://res.cloudinary.com/practicaldev/image/fetch/s--1mtEvyef--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn.hashnode.com/res/hashnode/image/upload/v1647490619965/P1dsNgj-f1.png',
+    },
+    {
+        id: 6,
+        title: 'Redux',
+        extra: 'RTK Query, Reducer, Thunks',
+        imageUrl:
+            'https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png',
+    },
+    {
+        id: 7,
+        title: 'Figma',
+        extra: 'Prototypes, Canvas, UI Kit',
+        imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png',
+    },
+    {
+        id: 8,
+        title: 'Spline',
+        extra: '3D Modeling, Animation',
+        imageUrl:
+            'https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/npitztetvyezgsmh6yum',
+    },
+    {
+        id: 9,
+        title: 'Git',
+        extra: 'GitHub, GitLab, GitHub Copilot',
+        imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
+    },
+    {
+        id: 10,
+        title: 'Bootstrap',
+        extra: 'UI, Components',
+        imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png',
+    },
+    {
+        id: 11,
+        title: 'Tailwind',
+        extra: 'UI, Components',
+        imageUrl:
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png',
+    },
+    {
+        id: 12,
+        title: 'MUI',
+        extra: 'UI, Components',
+        imageUrl:
+            'https://mui.com/static/logo.png',
+    }
+]
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'Обо мне', href: '#' },
+    { name: 'Скиллы', href: '#' },
+    { name: 'Проекты', href: '#' },
+    { name: 'Предложить работу', href: '#' },
 ]
 const features = [
     {
@@ -373,35 +457,46 @@ export default function App() {
                                 </div>
                                 <div className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
                                     <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
-                                        {/*<Spline scene="https://prod.spline.design/YgwCeXQMtbXV8ARV/scene.splinecode" />*/}
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    {/* Feature section with screenshot */}
-                    <div className="relative bg-gray-50 pt-16 sm:pt-24 lg:pt-32">
-                        <div className="mx-auto max-w-md px-4 text-center sm:px-6 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
-                            <div>
-                                <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase">Serverless</h2>
-                                <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                                    No server? No problem.
-                                </p>
-                                <p className="mt-5 max-w-prose mx-auto text-xl text-gray-500">
-                                    Phasellus lorem quam molestie id quisque diam aenean nulla in. Accumsan in quis quis nunc, ullamcorper
-                                    malesuada. Eleifend condimentum id viverra nulla.
-                                </p>
-                            </div>
-                            <div className="mt-12 -mb-10 sm:-mb-24 lg:-mb-80">
-                                <img
-                                    className="rounded-lg shadow-xl ring-1 ring-black ring-opacity-5"
-                                    src="https://tailwindui.com/img/component-images/green-project-app-screenshot.jpg"
-                                    alt=""
-                                />
+
+                    <div className="bg-gray-100 py-8">
+                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                            <h2 className="text-base font-semibold tracking-wider text-cyan-600 uppercase text-center">tech skills</h2>
+                            <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl text-center">
+                                Технологический стек
+                            </p>
+                            <div className="mt-12">
+                                <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                                    {skills.map((skill) => (
+                                        <div
+                                            key={skill.id}
+                                            className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3"
+                                        >
+                                            <div className="flex-shrink-0 h-12 w-12 flex items-center justify-center">
+                                                <img className="max-h-full" src={skill.imageUrl} alt="" />
+                                            </div>
+                                            <div className="flex-1 min-w-0">
+                                                <p className="text-sm font-medium text-gray-900">{skill.title}</p>
+                                                <p className="text-sm text-gray-500 truncate">{skill.extra}</p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
+
+
+
+
 
                     {/* Feature section with grid */}
                     <div className="relative bg-white py-16 sm:py-24 lg:py-32">
@@ -531,45 +626,6 @@ export default function App() {
                                         </div>
                                     </div>
                                 ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* CTA Section */}
-                    <div className="relative bg-gray-900">
-                        <div className="relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
-                            <img
-                                className="w-full h-full object-cover"
-                                src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&sat=-100"
-                                alt=""
-                            />
-                            <div
-                                aria-hidden="true"
-                                className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600 mix-blend-multiply"
-                            />
-                        </div>
-                        <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32">
-                            <div className="md:ml-auto md:w-1/2 md:pl-10">
-                                <h2 className="text-base font-semibold uppercase tracking-wider text-gray-300">
-                                    Award winning support
-                                </h2>
-                                <p className="mt-2 text-white text-3xl font-extrabold tracking-tight sm:text-4xl">We’re here to help</p>
-                                <p className="mt-3 text-lg text-gray-300">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, egestas tempus tellus etiam sed. Quam a
-                                    scelerisque amet ullamcorper eu enim et fermentum, augue. Aliquet amet volutpat quisque ut interdum
-                                    tincidunt duis.
-                                </p>
-                                <div className="mt-8">
-                                    <div className="inline-flex rounded-md shadow">
-                                        <a
-                                            href="#"
-                                            className="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50"
-                                        >
-                                            Visit the help center
-                                            <ExternalLinkIcon className="-mr-1 ml-3 h-5 w-5 text-gray-400" aria-hidden="true" />
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
