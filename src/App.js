@@ -10,7 +10,7 @@ import {
     ShieldCheckIcon,
     XIcon,
 } from '@heroicons/react/outline'
-import { ChevronRightIcon, ExternalLinkIcon } from '@heroicons/react/solid'
+import { ChevronRightIcon } from '@heroicons/react/solid'
 
 const skills = [
     {
@@ -298,7 +298,7 @@ export default function App() {
                         >
                             <div className="flex items-center flex-1">
                                 <div className="flex items-center justify-between w-full md:w-auto">
-                                    <a href="#">
+                                    <a href="/">
                                         <span className="sr-only">Workflow</span>
                                         <img
                                             className="h-8 w-auto sm:h-10"
@@ -327,7 +327,7 @@ export default function App() {
                             </div>
                             <div className="hidden md:flex md:items-center md:space-x-6">
                                 <a
-                                    href="#"
+                                    href="/"
                                     className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
                                 >
                                     Войти
@@ -376,7 +376,7 @@ export default function App() {
                                     </div>
                                     <div className="mt-6 px-5">
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="block text-center w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700"
                                         >
                                             Start free trial
@@ -385,7 +385,7 @@ export default function App() {
                                     <div className="mt-6 px-5">
                                         <p className="text-center text-base font-medium text-gray-500">
                                             Existing customer?{' '}
-                                            <a href="#" className="text-gray-900 hover:underline">
+                                            <a href="/" className="text-gray-900 hover:underline">
                                                 Login
                                             </a>
                                         </p>
@@ -402,7 +402,7 @@ export default function App() {
                                 <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                                     <div className="lg:py-24">
                                         <a
-                                            href="#"
+                                            href="/"
                                             className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
                                         >
                       <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
@@ -446,7 +446,7 @@ export default function App() {
                                                 </div>
                                                 <p className="mt-3 text-sm text-gray-300 sm:mt-4">
                                                     Вы также можете связаться со мной и подробнее описать предложение через {' '}
-                                                    <a href="#" className="font-medium text-white">
+                                                    <a href="/" className="font-medium text-white">
                                                         форму обратной связи
                                                     </a>
                                                     .
@@ -658,7 +658,7 @@ export default function App() {
                                 <div className="md:grid md:grid-cols-2 md:gap-8">
                                     <div>
                                         <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Solutions</h3>
-                                        <ul role="list" className="mt-4 space-y-4">
+                                        <ul className="mt-4 space-y-4">
                                             {footerNavigation.solutions.map((item) => (
                                                 <li key={item.name}>
                                                     <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
@@ -670,7 +670,7 @@ export default function App() {
                                     </div>
                                     <div className="mt-12 md:mt-0">
                                         <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Support</h3>
-                                        <ul role="list" className="mt-4 space-y-4">
+                                        <ul className="mt-4 space-y-4">
                                             {footerNavigation.support.map((item) => (
                                                 <li key={item.name}>
                                                     <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
@@ -684,7 +684,7 @@ export default function App() {
                                 <div className="md:grid md:grid-cols-2 md:gap-8">
                                     <div>
                                         <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Company</h3>
-                                        <ul role="list" className="mt-4 space-y-4">
+                                        <ul className="mt-4 space-y-4">
                                             {footerNavigation.company.map((item) => (
                                                 <li key={item.name}>
                                                     <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
@@ -696,7 +696,7 @@ export default function App() {
                                     </div>
                                     <div className="mt-12 md:mt-0">
                                         <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">Legal</h3>
-                                        <ul role="list" className="mt-4 space-y-4">
+                                        <ul className="mt-4 space-y-4">
                                             {footerNavigation.legal.map((item) => (
                                                 <li key={item.name}>
                                                     <a href={item.href} className="text-base text-gray-500 hover:text-gray-900">
