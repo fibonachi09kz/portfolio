@@ -124,7 +124,8 @@ export default function App() {
                                 <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                                     <div className="lg:py-24">
                                         <a
-                                            href="/"
+                                            href="https://hh.kz/applicant/resumes/view?resume=185d44edff0616e77a0039ed1f6b6953746f50"
+                                            target="_blank"
                                             className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
                                         >
                                             <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
@@ -178,7 +179,7 @@ export default function App() {
                                     </div>
                                 </div>
                                 <div className="mt-12 sm:-mb-48 lg:m-0 lg:relative hidden lg:block">
-                                    <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0 h-full">
+                                    <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0 h-full cursor-grab">
                                         <Spline scene="https://prod.spline.design/YgwCeXQMtbXV8ARV/scene.splinecode" />
                                     </div>
                                 </div>
