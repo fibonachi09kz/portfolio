@@ -1,50 +1,58 @@
-import { useState } from 'react'
-
-import { db } from "../tools/firebase"
-import { collection, addDoc } from "firebase/firestore"
+import { useState, useRef } from 'react'
+import emailjs from '@emailjs/browser';
+import {emailVar} from "../../form-vars";
 
 import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
 
-
+function ConfirmText() {
+    return (
+        <>
+            <p className="text-cyan-600 font-medium flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+                Сообщение успешно отправлено!
+            </p>
+        </>
+    )
+}
+function ErrorText() {
+    return (
+        <>
+            <p className="text-red-600 font-medium flex items-center gap-1">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clipRule="evenodd" />
+                </svg>
+                Произошла ошибка, попробуйте позже!
+            </p>
+        </>
+    )
+}
 
 function ContactForm() {
-
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [telegram, setTelegram] = useState("");
-    const [phone, setPhone] = useState("");
-    const [message, setMessage] = useState("");
+    
+    const form = useRef();
 
     const [loader, setLoader] = useState(false);
+    const [error, setError] = useState(false)
+    const [confirm, setConfirm] = useState(false)
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setLoader(true);
-
-        const formColRef = collection(db, "contacts");
-        addDoc(formColRef, {
-            name: name,
-            email: email,
-            telegram: telegram,
-            phone: phone,
-            message: message,
-        })
-        .then(() => {
-            setLoader(false);
-            console.log("Сообщение отправлено в Firebase DB");
-        })
-        .catch((error) => {
-            console.log(error.message);
-            setLoader(false);
+        setConfirm(false)
+        setError(false)
+    
+        emailjs.sendForm(emailVar.sId, emailVar.tId, form.current, emailVar.publicKey)
+        .then((result) => {
+            setError(false)
+            setLoader(false)
+            setConfirm(true)
+        }, (error) => {
+            setError(true)
+            setConfirm(false)
         });
 
-
-
-        setName("");
-        setEmail("");
-        setTelegram("");
-        setPhone("");
-        setMessage("");
     };
 
 
@@ -263,9 +271,8 @@ function ContactForm() {
                                 </ul>
                             </div>
 
-                            {/* Contact form */}
                             <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-                                <form onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                                <form ref={form} onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                                     <div>
                                         <label htmlFor="first-name" className="block text-sm font-medium text-gray-900">
                                             Имя
@@ -273,8 +280,7 @@ function ContactForm() {
                                         <div className="mt-1">
                                             <input
                                                 type="text"
-                                                value={name}
-                                                onChange={(e) => setName(e.target.value)}
+                                                name="name"
                                                 autoComplete="given-name"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                             />
@@ -286,8 +292,7 @@ function ContactForm() {
                                         </label>
                                         <div className="mt-1">
                                             <input
-                                                value={email}
-                                                onChange={(e) => setEmail(e.target.value)}
+                                                name="email"
                                                 type="email"
                                                 autoComplete="email"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
@@ -306,8 +311,7 @@ function ContactForm() {
                                         <div className="mt-1">
                                             <input
                                                 type="text"
-                                                value={telegram}
-                                                onChange={(e) => setTelegram(e.target.value)}
+                                                name="telegram"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                                 aria-describedby="tg-optional"
                                             />
@@ -325,8 +329,7 @@ function ContactForm() {
                                         <div className="mt-1">
                                             <input
                                                 type="text"
-                                                value={phone}
-                                                onChange={(e) => setPhone(e.target.value)}
+                                                name="phone"
                                                 autoComplete="tel"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                                 aria-describedby="phone-optional"
@@ -344,20 +347,32 @@ function ContactForm() {
                                         </div>
                                         <div className="mt-1">
                                                     <textarea
-                                                        value={message}
-                                                        onChange={(e) => setMessage(e.target.value)}
+                                                        name="message"
                                                         rows={4}
                                                         className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border border-gray-300 rounded-md"
                                                         aria-describedby="message-max"
                                                     />
                                         </div>
                                     </div>
-                                    <div className="sm:col-span-2 sm:flex sm:justify-end">
+                                    <div className="sm:col-span-2 flex flex-col sm:flex-row sm:justify-end items-center gap-4">
+                                        {
+                                            confirm ? <ConfirmText/> : null
+                                        }
+                                        {
+                                            error ? <ErrorText/> : null
+                                        }
                                         <button
                                             type="submit"
-                                            className="mt-2 w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-white"
+                                            disabled={loader ? true : false}
+                                            className="gap-1 ml-auto w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
                                         >
                                             Отправить
+                                            {
+                                                loader ?
+                                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 form-btn__loading" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                                                    <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg> : ''
+                                            }
                                         </button>
                                     </div>
                                 </form>
