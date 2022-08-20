@@ -43,7 +43,7 @@ function ContactForm() {
         setConfirm(false)
         setError(false)
     
-        emailjs.sendForm(emailVar.sId, emailVar.tId, form.current, emailVar.publicKey)
+        emailjs.sendForm(emailVar.sId, 'template_tno4i2u', form.current, emailVar.publicKey)
         .then((result) => {
             setError(false)
             setLoader(false)
@@ -66,7 +66,7 @@ function ContactForm() {
                     <div className="relative bg-white rounded-lg border border-gray-300 shadow-sm">
                         <div className="grid grid-cols-1 lg:grid-cols-3">
 
-                            <div className="relative overflow-hidden py-10 px-6 bg-cyan-800 sm:px-10 xl:p-12 rounded-t-lg lg:rounded-l-lg ">
+                            <div className="relative overflow-hidden py-10 px-6 bg-cyan-800 sm:px-10 xl:p-12 rounded-t-lg lg:rounded-none lg:rounded-l-lg">
                                 <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
                                     <svg
                                         className="absolute inset-0 w-full h-full"
@@ -272,7 +272,7 @@ function ContactForm() {
                             </div>
 
                             <div className="py-10 px-6 sm:px-10 lg:col-span-2 xl:p-12">
-                                <form ref={form} onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+                                <form id="contact-form" ref={form} onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                                     <div>
                                         <label htmlFor="first-name" className="block text-sm font-medium text-gray-900">
                                             Имя
@@ -281,6 +281,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="name"
+                                                required
                                                 autoComplete="given-name"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                             />
@@ -294,6 +295,7 @@ function ContactForm() {
                                             <input
                                                 name="email"
                                                 type="email"
+                                                required
                                                 autoComplete="email"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                             />
@@ -312,6 +314,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="telegram"
+                                                required
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                                 aria-describedby="tg-optional"
                                             />
@@ -330,6 +333,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="phone"
+                                                required
                                                 autoComplete="tel"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                                 aria-describedby="phone-optional"
@@ -349,6 +353,7 @@ function ContactForm() {
                                                     <textarea
                                                         name="message"
                                                         rows={4}
+                                                        required
                                                         className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border border-gray-300 rounded-md"
                                                         aria-describedby="message-max"
                                                     />

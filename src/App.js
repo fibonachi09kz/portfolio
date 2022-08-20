@@ -8,11 +8,13 @@ import Spline from '@splinetool/react-spline';
 
 import { v4 as uuidv4 } from 'uuid';
 
+import HeaderForm from "./components/HeaderForm/HeaderForm";
 import ContactForm from "./components/ContactForm/ContactForm";
 import Projects from "./components/Projects/Projects"
 import Skills from "./components/Skills/Skills";
 
 import {navigation} from "./data/db";
+import logo from "./logo.svg"
 
 
 
@@ -32,8 +34,8 @@ export default function App() {
                                         <span className="sr-only">Workflow</span>
                                         <img
                                             className="h-8 w-auto sm:h-10"
-                                            src=""
-                                            alt=""
+                                            src={logo}
+                                            alt="logo"
                                         />
                                     </a>
                                     <div className="-mr-2 flex items-center md:hidden">
@@ -81,8 +83,8 @@ export default function App() {
                                     <div>
                                         <img
                                             className="h-8 w-auto"
-                                            src="https://tailwindui.com/img/logos/workflow-mark-teal-500-cyan-600.svg"
-                                            alt=""
+                                            src={logo}
+                                            alt="logo"
                                         />
                                     </div>
 
@@ -118,7 +120,7 @@ export default function App() {
                     </Transition>
                 </Popover>
                 <main>
-                    <div className="py-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+                    <div id="about" className="py-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
                         <div className="mx-auto max-w-7xl lg:px-8">
                             <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                                 <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
@@ -126,6 +128,7 @@ export default function App() {
                                         <a
                                             href="https://hh.kz/applicant/resumes/view?resume=185d44edff0616e77a0039ed1f6b6953746f50"
                                             target="_blank"
+                                            rel="noreferrer"
                                             className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
                                         >
                                             <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
@@ -144,37 +147,7 @@ export default function App() {
                                             Чтобы предложить мне участвовать в разработке чего-либо, просто оставьте свой Email, и я свяжусь с вами в ближайшее время!
                                         </p>
                                         <div className="mt-10 sm:mt-6">
-                                            <form action="#" className="sm:max-w-xl sm:mx-auto lg:mx-0">
-                                                <div className="sm:flex">
-                                                    <div className="min-w-0 flex-1">
-                                                        <label htmlFor="email" className="sr-only">
-                                                            Email
-                                                        </label>
-                                                        <input
-                                                            id="email"
-                                                            type="email"
-                                                            placeholder="Ваш Email"
-                                                            className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-                                                            required
-                                                        />
-                                                    </div>
-                                                    <div className="mt-3 sm:mt-0 sm:ml-3">
-                                                        <button
-                                                            type="submit"
-                                                            className="block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
-                                                        >
-                                                            Предложить работу
-                                                        </button>
-                                                    </div>
-                                                </div>
-                                                <p className="mt-3 text-sm text-gray-300 sm:mt-4">
-                                                    Вы также можете связаться со мной и подробнее описать предложение через {' '}
-                                                    <a href="/" className="font-medium text-white">
-                                                        форму обратной связи
-                                                    </a>
-                                                    .
-                                                </p>
-                                            </form>
+                                        <HeaderForm/>
                                         </div>
                                     </div>
                                 </div>

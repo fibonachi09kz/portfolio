@@ -3,7 +3,7 @@ import {skills} from "../../data/db";
 
 function Skills() {
     return (
-        <div className="bg-gray-100 py-16">
+        <div id="stack" className="bg-gray-100 py-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-base font-semibold tracking-wider text-cyan-600 text-center">&lt;TechSkills/&gt;</h2>
                 <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl text-center">

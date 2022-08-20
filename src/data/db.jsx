@@ -123,8 +123,8 @@ export const skills = [
     }
 ]
 export const navigation = [
-    { name: 'Обо мне', href: '#' },
-    { name: 'Скиллы', href: '#' },
-    { name: 'Проекты', href: '#' },
-    { name: 'Предложить работу', href: '#' },
+    { name: 'Обо мне', href: '#about' },
+    { name: 'Стек', href: '#stack' },
+    { name: 'Проекты', href: '#projects' },
+    { name: 'Связаться со мной', href: '#contact-form' },
 ]
