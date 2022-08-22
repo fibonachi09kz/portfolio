@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import {emailVar} from "../../form-vars";
+import useInput from "../../hooks/useInput";
 
 import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
 
@@ -33,6 +34,15 @@ function ContactForm() {
     
     const form = useRef();
 
+
+    const nameField = useInput();
+    const emailField = useInput();
+    const tgField = useInput();
+    const phoneField = useInput();
+    const messageField = useInput();
+
+
+
     const [loader, setLoader] = useState(false);
     const [error, setError] = useState(false)
     const [confirm, setConfirm] = useState(false)
@@ -48,6 +58,13 @@ function ContactForm() {
             setError(false)
             setLoader(false)
             setConfirm(true)
+
+            nameField.setValue('')
+            emailField.setValue('')
+            tgField.setValue('')
+            phoneField.setValue('')
+            messageField.setValue('')
+
         }, (error) => {
             setError(true)
             setConfirm(false)
@@ -281,6 +298,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="name"
+                                                {...nameField}
                                                 required
                                                 autoComplete="given-name"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
@@ -295,6 +313,7 @@ function ContactForm() {
                                             <input
                                                 name="email"
                                                 type="email"
+                                                {...emailField}
                                                 required
                                                 autoComplete="email"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
@@ -314,6 +333,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="telegram"
+                                                {...tgField}
                                                 required
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                                 aria-describedby="tg-optional"
@@ -333,6 +353,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="phone"
+                                                {...phoneField}
                                                 required
                                                 autoComplete="tel"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
@@ -353,6 +374,7 @@ function ContactForm() {
                                                     <textarea
                                                         name="message"
                                                         rows={4}
+                                                        {...messageField}
                                                         required
                                                         className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border border-gray-300 rounded-md"
                                                         aria-describedby="message-max"
