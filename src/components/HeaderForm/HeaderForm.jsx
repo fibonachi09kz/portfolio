@@ -1,6 +1,7 @@
 import {useState, useRef} from "react";
 import emailjs from '@emailjs/browser';
 import {emailVar} from "../../form-vars";
+import useInput from "../../hooks/useInput";
 
 function ConfirmText() {
 	return (
@@ -33,6 +34,8 @@ function HeaderForm() {
 	const [loader, setLoader] = useState(false);
 	const [error, setError] = useState(false)
 	const [confirm, setConfirm] = useState(false)
+
+	const emailField = useInput()
 	
 	const handleSubmit = (e) => {
 		
@@ -47,6 +50,9 @@ function HeaderForm() {
 				setError(false)
 				setLoader(false)
 				setConfirm(true)
+
+				emailField.setValue('')
+
 			}, (error) => {
 				setError(true)
 				setConfirm(false)
@@ -64,6 +70,7 @@ function HeaderForm() {
 					<input
 						name="email"
 						type="email"
+						{...emailField}
 						placeholder="Ваш Email"
 						className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
 						required
