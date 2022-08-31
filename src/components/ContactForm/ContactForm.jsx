@@ -35,11 +35,11 @@ function ContactForm() {
     const form = useRef();
 
 
-    const nameField = useInput();
-    const emailField = useInput();
-    const tgField = useInput();
-    const phoneField = useInput();
-    const messageField = useInput();
+    const nameField = useInput('');
+    const emailField = useInput('');
+    const tgField = useInput('');
+    const phoneField = useInput('');
+    const messageField = useInput('');
 
 
 
@@ -298,7 +298,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="name"
-                                                {...nameField}
+                                                {...nameField.controls}
                                                 required
                                                 autoComplete="given-name"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
@@ -313,7 +313,7 @@ function ContactForm() {
                                             <input
                                                 name="email"
                                                 type="email"
-                                                {...emailField}
+                                                {...emailField.controls}
                                                 required
                                                 autoComplete="email"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
@@ -333,7 +333,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="telegram"
-                                                {...tgField}
+                                                {...tgField.controls}
                                                 required
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
                                                 aria-describedby="tg-optional"
@@ -353,7 +353,7 @@ function ContactForm() {
                                             <input
                                                 type="text"
                                                 name="phone"
-                                                {...phoneField}
+                                                {...phoneField.controls}
                                                 required
                                                 autoComplete="tel"
                                                 className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
@@ -374,7 +374,7 @@ function ContactForm() {
                                                     <textarea
                                                         name="message"
                                                         rows={4}
-                                                        {...messageField}
+                                                        {...messageField.controls}
                                                         required
                                                         className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border border-gray-300 rounded-md"
                                                         aria-describedby="message-max"
@@ -390,7 +390,7 @@ function ContactForm() {
                                         }
                                         <button
                                             type="submit"
-                                            disabled={loader ? true : false}
+                                            disabled={loader}
                                             className="gap-1 ml-auto w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
                                         >
                                             Отправить

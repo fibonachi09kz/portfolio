@@ -30,12 +30,11 @@ function ErrorText() {
 
 function HeaderForm() {
 	const headerForm = useRef();
+	const emailField = useInput('')
 	
 	const [loader, setLoader] = useState(false);
 	const [error, setError] = useState(false)
 	const [confirm, setConfirm] = useState(false)
-
-	const emailField = useInput()
 	
 	const handleSubmit = (e) => {
 		
@@ -70,7 +69,7 @@ function HeaderForm() {
 					<input
 						name="email"
 						type="email"
-						{...emailField}
+						{...emailField.controls}
 						placeholder="Ваш Email"
 						className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
 						required
