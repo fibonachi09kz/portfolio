@@ -4,7 +4,6 @@ import { Popover, Transition } from '@headlessui/react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
 import { ChevronRightIcon } from '@heroicons/react/solid'
 
-import Spline from '@splinetool/react-spline';
 
 import { v4 as uuidv4 } from 'uuid';
 
@@ -15,6 +14,7 @@ import Skills from "./components/Skills/Skills";
 
 import {navigation} from "./data/db";
 import logo from "./logo.svg"
+
 
 
 
