@@ -122,9 +122,3 @@ export const skills = [
             'https://mui.com/static/logo.png',
     }
 ]
-export const navigation = [
-    { name: 'Обо мне', href: '#about' },
-    { name: 'Стек', href: '#stack' },
-    { name: 'Проекты', href: '#projects' },
-    { name: 'Связаться со мной', href: '#contact-form' },
-]
