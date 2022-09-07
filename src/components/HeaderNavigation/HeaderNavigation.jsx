@@ -15,14 +15,14 @@ function HeaderNavigation() {
                     >
                         <div className="flex items-center flex-1">
                             <div className="flex items-center justify-between w-full md:w-auto">
-                                <a href="/">
+                                <Link to="/">
                                     <span className="sr-only">Workflow</span>
                                     <img
                                         className="h-8 w-auto sm:h-10"
                                         src={logo}
                                         alt="logo"
                                     />
-                                </a>
+                                </Link>
                                 <div className="-mr-2 flex items-center md:hidden">
                                     <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
                                         <span className="sr-only">Open main menu</span>
@@ -86,7 +86,7 @@ function HeaderNavigation() {
                                     <Link to="#about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         About me
                                     </Link>
-                                    <Link to="#stack" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/skills" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Tech stack
                                     </Link>
                                     <Link to="#projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
