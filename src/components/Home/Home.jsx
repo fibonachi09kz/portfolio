@@ -3,6 +3,7 @@ import HeaderForm from "../HeaderForm/HeaderForm";
 import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import ContactForm from "../ContactForm/ContactForm";
+import {AtomAnim} from "../AtomAnim/AtomAnim";
 
 
 function Home() {
@@ -25,14 +26,14 @@ function Home() {
                                     <span className="ml-4 text-sm">View on HH.ru</span>
                                     <ChevronRightIcon className="ml-2 w-5 h-5 text-gray-500" aria-hidden="true" />
                                 </a>
-                                <div className="flex items-center gap-4 flex-wrap my-3">
+                                <div className="flex items-center gap-4 flex-wrap my-3 sm:justify-center lg:justify-start">
                                     <div className="flex items-center text-sm text-gray-300">
                                         <svg className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-500"
                                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                              fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd"
+                                            <path fillRule="evenodd"
                                                   d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
-                                                  clip-rule="evenodd"/>
+                                                  clipRule="evenodd"/>
                                         </svg>
                                         Kazakhstan, Karaganda
                                     </div>
@@ -40,9 +41,9 @@ function Home() {
                                         <svg className="flex-shrink-0 mr-1.5 h-5 w-5 text-gray-500"
                                              xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
                                              fill="currentColor" aria-hidden="true">
-                                            <path fill-rule="evenodd"
+                                            <path fillRule="evenodd"
                                                   d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z"
-                                                  clip-rule="evenodd"/>
+                                                  clipRule="evenodd"/>
                                             <path
                                                 d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"/>
                                         </svg>
@@ -56,7 +57,7 @@ function Home() {
                                             </span>
                                 </h1>
                                 <p className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">
-                                    Чтобы предложить мне участвовать в разработке чего-либо, просто оставьте свой Email, и я свяжусь с вами в ближайшее время!
+                                    To invite me to participate in the development of something, just leave your Email and I will contact you soon!
                                 </p>
                                 <div className="mt-10 sm:mt-6">
                                     <HeaderForm/>
@@ -65,7 +66,7 @@ function Home() {
                         </div>
                         <div className="mt-12 sm:-mb-48 lg:m-0 lg:relative hidden lg:block">
                             <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0 h-full cursor-grab">
-
+                                <AtomAnim />
                             </div>
                         </div>
                     </div>

@@ -1,12 +1,12 @@
-export const people = [
+export const projectList = [
     {
-        name: 'Jane Cooper',
-        title: 'Paradigm Representative',
+        name: 'GitHub Repos Finder',
+        title: 'Find github repo with account name',
         categories: ['react', 'typescript', 'bootstrap'],
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
     },
     {
         name: 'Jane Cooper',
@@ -15,7 +15,7 @@ export const people = [
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
     },
     {
         name: 'Jane Cooper',
@@ -24,7 +24,7 @@ export const people = [
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
     },
     {
         name: 'Jane Cooper',
@@ -33,7 +33,7 @@ export const people = [
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=4&w=256&h=256&q=60',
+            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
     }
 ]
 export const skills = [

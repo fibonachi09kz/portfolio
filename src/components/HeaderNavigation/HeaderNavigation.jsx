@@ -16,7 +16,7 @@ function HeaderNavigation() {
                         <div className="flex items-center flex-1">
                             <div className="flex items-center justify-between w-full md:w-auto">
                                 <Link to="/">
-                                    <span className="sr-only">Workflow</span>
+                                    <span className="sr-only">Fibonachi</span>
                                     <img
                                         className="h-8 w-auto sm:h-10"
                                         src={logo}
@@ -34,16 +34,16 @@ function HeaderNavigation() {
                                 <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                                     Home
                                 </Link>
-                                <Link to="#about" className="text-base font-medium text-white hover:text-gray-300">
+                                <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                                     About me
                                 </Link>
                                 <Link to="/skills" className="text-base font-medium text-white hover:text-gray-300">
                                     Tech stack
                                 </Link>
-                                <Link to="#projects" className="text-base font-medium text-white hover:text-gray-300">
+                                <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                                     Projects
                                 </Link>
-                                <Link to="#contact-form" className="text-base font-medium text-white hover:text-gray-300">
+                                <Link to="/contact" className="text-base font-medium text-white hover:text-gray-300">
                                     Contact
                                 </Link>
                             </div>
@@ -60,7 +60,7 @@ function HeaderNavigation() {
                     leaveFrom="opacity-100 scale-100"
                     leaveTo="opacity-0 scale-95"
                 >
-                    <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
+                    <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden z-50">
                         <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div className="px-5 pt-4 flex items-center justify-between">
                                 <div>
@@ -80,28 +80,22 @@ function HeaderNavigation() {
                             </div>
                             <div className="pt-5 pb-6">
                                 <div className="px-2 space-y-1">
+
                                     <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Home
                                     </Link>
-                                    <Link to="#about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         About me
                                     </Link>
                                     <Link to="/skills" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Tech stack
                                     </Link>
-                                    <Link to="#projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Projects
                                     </Link>
-                                    <Link to="#contact-form" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Contact
                                     </Link>
-                                </div>
-                                <div className="mt-6 px-5">
-                                    <p className="text-center text-base font-medium text-gray-500">
-                                        <a href="/" className="text-gray-900 hover:underline">
-                                            Войти
-                                        </a>
-                                    </p>
                                 </div>
                             </div>
                         </div>

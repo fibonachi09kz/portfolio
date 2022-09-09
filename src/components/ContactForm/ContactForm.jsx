@@ -12,7 +12,7 @@ function ConfirmText() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
-                Сообщение успешно отправлено!
+                The message has been sent successfully!
             </p>
         </>
     )
@@ -24,7 +24,7 @@ function ErrorText() {
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM7 9a1 1 0 100-2 1 1 0 000 2zm7-1a1 1 0 11-2 0 1 1 0 012 0zm-7.536 5.879a1 1 0 001.415 0 3 3 0 014.242 0 1 1 0 001.415-1.415 5 5 0 00-7.072 0 1 1 0 000 1.415z" clipRule="evenodd" />
                 </svg>
-                Произошла ошибка, попробуйте позже!
+                An error has occurred, please try again later!
             </p>
         </>
     )
@@ -79,7 +79,7 @@ function ContactForm() {
             <div className="bg-gray-100">
                 <div className="max-w-7xl mx-auto py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
                     <h2 className="text-base font-semibold tracking-wider text-cyan-600 text-center">&lt;ContactForm/&gt;</h2>
-                    <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl text-center mb-12">Связаться со мной</p>
+                    <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl text-center mb-12">Contact with me</p>
                     <div className="relative bg-white rounded-lg border border-gray-300 shadow-sm">
                         <div className="grid grid-cols-1 lg:grid-cols-3">
 
@@ -180,13 +180,13 @@ function ContactForm() {
                                         </defs>
                                     </svg>
                                 </div>
-                                <h3 className="text-lg font-medium text-white">Контактная информация</h3>
+                                <h3 className="text-lg font-medium text-white">Contact information</h3>
                                 <p className="mt-6 text-base text-indigo-50 max-w-3xl">
-                                    Выберите любой удобный для вас способ связаться со мной напрямую
+                                    Choose any convenient way for you to contact me directly
                                 </p>
                                 <dl className="mt-8 space-y-6">
                                     <dt>
-                                        <span className="sr-only">Номер телефона</span>
+                                        <span className="sr-only">Phone number</span>
                                     </dt>
                                     <dd className="flex text-base text-indigo-50">
                                         <PhoneIcon className="flex-shrink-0 w-6 h-6 text-indigo-200" aria-hidden="true" />
@@ -292,7 +292,7 @@ function ContactForm() {
                                 <form id="contact-form" ref={form} onSubmit={handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
                                     <div>
                                         <label htmlFor="first-name" className="block text-sm font-medium text-gray-900">
-                                            Имя
+                                            Name
                                         </label>
                                         <div className="mt-1">
                                             <input
@@ -323,10 +323,10 @@ function ContactForm() {
                                     <div>
                                         <div className="flex justify-between">
                                             <label htmlFor="phone" className="block text-sm font-medium text-gray-900">
-                                                Телеграм
+                                                Telegram
                                             </label>
                                             <span id="tg-optional" className="text-sm text-gray-500">
-                                                Опционально
+                                                Optional
                                             </span>
                                         </div>
                                         <div className="mt-1">
@@ -343,10 +343,10 @@ function ContactForm() {
                                     <div>
                                         <div className="flex justify-between">
                                             <label htmlFor="phone" className="block text-sm font-medium text-gray-900">
-                                                Телефон
+                                                Phone
                                             </label>
                                             <span id="phone-optional" className="text-sm text-gray-500">
-                                                Опционально
+                                                Optional
                                             </span>
                                         </div>
                                         <div className="mt-1">
@@ -364,21 +364,21 @@ function ContactForm() {
                                     <div className="sm:col-span-2">
                                         <div className="flex justify-between">
                                             <label htmlFor="message" className="block text-sm font-medium text-gray-900">
-                                                Сообщение
+                                                Message
                                             </label>
                                             <span id="message-max" className="text-sm text-gray-500">
-                                                        Не более 1000 знаков
-                                                    </span>
+                                                No more than 1000 characters
+                                            </span>
                                         </div>
                                         <div className="mt-1">
-                                                    <textarea
-                                                        name="message"
-                                                        rows={4}
-                                                        {...messageField.controls}
-                                                        required
-                                                        className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border border-gray-300 rounded-md"
-                                                        aria-describedby="message-max"
-                                                    />
+                                            <textarea
+                                                name="message"
+                                                rows={4}
+                                                {...messageField.controls}
+                                                required
+                                                className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border border-gray-300 rounded-md"
+                                                aria-describedby="message-max"
+                                            />
                                         </div>
                                     </div>
                                     <div className="sm:col-span-2 flex flex-col sm:flex-row sm:justify-end items-center gap-4">
@@ -393,7 +393,7 @@ function ContactForm() {
                                             disabled={loader}
                                             className="gap-1 ml-auto w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
                                         >
-                                            Отправить
+                                            Send message
                                             {
                                                 loader ?
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 form-btn__loading" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
