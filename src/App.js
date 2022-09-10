@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import SkillDetailPage from "./pages/SkillDetailPage/SkillDetailPage";
 import SkillsPage from "./pages/SkillsPage/SkillsPage";
 import ContactPage from "./pages/ContactPage/ContactPage";
+import AboutMePage from "./pages/AboutMePage/AboutMePage";
 
 
 export default function App() {
@@ -17,7 +18,7 @@ export default function App() {
 
                 <Routes>
                     <Route index element={<Home />} />
-                    {/*<Route path="about-me" element={<AboutMePage />} />*/}
+                    <Route path="about-me" element={<AboutMePage />} />
                     <Route path="skills" element={<SkillsPage />} />
                     <Route path="skills/:id" element={<SkillDetailPage />} />
 

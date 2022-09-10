@@ -11,7 +11,7 @@ function Footer() {
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="#about" className="text-base font-medium text-white hover:text-gray-300">
+                        <Link to="/about-me" className="text-base font-medium text-white hover:text-gray-300">
                             About me
                         </Link>
                     </div>
@@ -21,12 +21,12 @@ function Footer() {
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="#projects" className="text-base font-medium text-white hover:text-gray-300">
+                        <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                             Projects
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="#contact-form" className="text-base font-medium text-white hover:text-gray-300">
+                        <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                             Contact
                         </Link>
                     </div>

@@ -34,7 +34,7 @@ function HeaderNavigation() {
                                 <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                                     Home
                                 </Link>
-                                <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
+                                <Link to="/about-me" className="text-base font-medium text-white hover:text-gray-300">
                                     About me
                                 </Link>
                                 <Link to="/skills" className="text-base font-medium text-white hover:text-gray-300">
@@ -84,7 +84,7 @@ function HeaderNavigation() {
                                     <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Home
                                     </Link>
-                                    <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/about-me" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         About me
                                     </Link>
                                     <Link to="/skills" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
