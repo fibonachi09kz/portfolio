@@ -1,8 +1,12 @@
 import BackPage from "../../components/BackPage/BackPage";
 import avatar from "../../assets/img/avatar.jpg";
 import bg from "../../assets/img/about-bg.jpg";
+import {bioInfo} from "../../data/db";
 
 function AboutMePage({props}) {
+	
+	console.log(bioInfo)
+	
 	return(
 		<>
 			<BackPage title={props?.title || 'About me'}/>
@@ -23,11 +27,11 @@ function AboutMePage({props}) {
 							<div
 								className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
 								<div className="sm:hidden 2xl:block mt-6 min-w-0 flex-1">
-									<h1 className="text-2xl font-bold text-gray-900 truncate">Aleksin Danila Sergeevich</h1>
+									<h1 className="text-2xl font-bold text-gray-900 truncate">{bioInfo.surname} {bioInfo.name} {bioInfo.patronymic}</h1>
 								</div>
 								<div
 									className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
-									<a href="mailto:danya09kz@gmail.com"
+									<a href={'mailto:' + bioInfo.contacts.email}
 											className="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400">
 										
 										<svg className="-ml-1 mr-2 h-5 w-5 text-gray-400"
@@ -39,7 +43,7 @@ function AboutMePage({props}) {
 										</svg>
 										<span>Message</span>
 									</a>
-									<a href="tel:+77788481988"
+									<a href={'tel:' + bioInfo.contacts.phone.replace(/\D/g, '')}
 											className="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400">
 										
 										<svg className="-ml-1 mr-2 h-5 w-5 text-gray-400"
@@ -77,26 +81,26 @@ function AboutMePage({props}) {
 					</div>
 				</div>
 				
-				<div className="mt-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="my-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 					<dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
 						<div className="sm:col-span-1">
 							<dt className="text-sm font-medium text-gray-500">Phone</dt>
-							<dd className="mt-1 text-sm text-gray-900">(555) 123-4567</dd>
+							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.phone}</dd>
 						</div>
 						
 						<div className="sm:col-span-1">
 							<dt className="text-sm font-medium text-gray-500">Email</dt>
-							<dd className="mt-1 text-sm text-gray-900">ricardocooper@example.com</dd>
+							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.email}</dd>
 						</div>
 						
 						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Title</dt>
-							<dd className="mt-1 text-sm text-gray-900">Senior Front-End Developer</dd>
+							<dt className="text-sm font-medium text-gray-500">Telegram</dt>
+							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.telegram}</dd>
 						</div>
 						
 						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Team</dt>
-							<dd className="mt-1 text-sm text-gray-900">Product Development</dd>
+							<dt className="text-sm font-medium text-gray-500">Instagram</dt>
+							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.instagram}</dd>
 						</div>
 						
 						<div className="sm:col-span-1">
@@ -133,75 +137,6 @@ function AboutMePage({props}) {
 							</dd>
 						</div>
 					</dl>
-				</div>
-				
-				<div className="mt-8 max-w-7xl mx-auto px-4 pb-12 sm:px-6 lg:px-8">
-					<h2 className="text-sm font-medium text-gray-500">Team members</h2>
-					<div className="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
-						<div
-							className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-pink-500">
-							<div className="flex-shrink-0">
-								<img className="h-10 w-10 rounded-full"
-									 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-									 alt="" />
-							</div>
-							<div className="flex-1 min-w-0">
-								<a href="#" className="focus:outline-none">
-									<span className="absolute inset-0" aria-hidden="true"></span>
-									<p className="text-sm font-medium text-gray-900">Leslie Alexander</p>
-									<p className="text-sm text-gray-500 truncate">Co-Founder / CEO</p>
-								</a>
-							</div>
-						</div>
-						
-						<div
-							className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-pink-500">
-							<div className="flex-shrink-0">
-								<img className="h-10 w-10 rounded-full"
-									 src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-									 alt="" />
-							</div>
-							<div className="flex-1 min-w-0">
-								<a href="#" className="focus:outline-none">
-									<span className="absolute inset-0" aria-hidden="true"></span>
-									<p className="text-sm font-medium text-gray-900">Michael Foster</p>
-									<p className="text-sm text-gray-500 truncate">Co-Founder / CTO</p>
-								</a>
-							</div>
-						</div>
-						
-						<div
-							className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-pink-500">
-							<div className="flex-shrink-0">
-								<img className="h-10 w-10 rounded-full"
-									 src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-									 alt="" />
-							</div>
-							<div className="flex-1 min-w-0">
-								<a href="#" className="focus:outline-none">
-									<span className="absolute inset-0" aria-hidden="true"></span>
-									<p className="text-sm font-medium text-gray-900">Dries Vincent</p>
-									<p className="text-sm text-gray-500 truncate">Manager, Business Relations</p>
-								</a>
-							</div>
-						</div>
-						
-						<div
-							className="relative rounded-lg border border-gray-300 bg-white px-6 py-5 shadow-sm flex items-center space-x-3 hover:border-gray-400 focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-pink-500">
-							<div className="flex-shrink-0">
-								<img className="h-10 w-10 rounded-full"
-									 src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-									 alt="" />
-							</div>
-							<div className="flex-1 min-w-0">
-								<a href="#" className="focus:outline-none">
-									<span className="absolute inset-0" aria-hidden="true"></span>
-									<p className="text-sm font-medium text-gray-900">Lindsay Walton</p>
-									<p className="text-sm text-gray-500 truncate">Front-end Developer</p>
-								</a>
-							</div>
-						</div>
-					</div>
 				</div>
 			</article>
 		</>

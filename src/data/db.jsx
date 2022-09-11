@@ -1,3 +1,5 @@
+import avatar from '../assets/img/avatar.jpg';
+
 export const projectList = [
     {
         name: 'GitHub Repos Finder',
@@ -122,3 +124,28 @@ export const skills = [
             'https://mui.com/static/logo.png',
     }
 ]
+
+export const bioInfo = {
+    name: 'Danila',
+    surname: 'Aleksin',
+    patronymic: 'Sergeevich',
+    avatar: avatar,
+    age: 21,
+    address: {
+        country: 'Kazakhstan',
+        city: 'Karaganda'
+    },
+    contacts: {
+        phone: '+7 (778) 848-19-88',
+        email: 'danya09kz@gmail.com',
+        telegram: '@Fibonachi09',
+        instagram: 'fibonachi',
+        github: 'fibonachi09kz'
+    },
+    job: {
+        category: 'Web development',
+        title: 'Frontend developer',
+        salary: '1500$',
+        relocation: true
+    }
+}
