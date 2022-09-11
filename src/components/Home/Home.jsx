@@ -4,9 +4,19 @@ import Skills from "../Skills/Skills";
 import Projects from "../Projects/Projects";
 import ContactForm from "../ContactForm/ContactForm";
 import {AtomAnim} from "../AtomAnim/AtomAnim";
+import {useEffect, useState} from "react";
 
 
 function Home() {
+    
+    const [isMobile, setIsMobile] = useState(false);
+    useEffect(() => {
+        let isNonAnim = window.innerWidth <= 1024;
+        setIsMobile(isNonAnim)
+    })
+    
+    
+    
     return(
         <main>
             <div id="about" className="py-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
@@ -66,7 +76,7 @@ function Home() {
                         </div>
                         <div className="mt-12 sm:-mb-48 lg:m-0 lg:relative hidden lg:block">
                             <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0 h-full cursor-grab">
-                                <AtomAnim />
+                                {isMobile ? null : <AtomAnim />}
                             </div>
                         </div>
                     </div>
