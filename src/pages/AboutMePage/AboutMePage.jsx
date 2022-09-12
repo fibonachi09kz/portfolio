@@ -1,19 +1,17 @@
 import BackPage from "../../components/BackPage/BackPage";
-import avatar from "../../assets/img/avatar.jpg";
 import bg from "../../assets/img/about-bg.jpg";
 import {bioInfo} from "../../data/db";
+import {Link} from "react-router-dom";
 
 function AboutMePage({props}) {
-	
-	console.log(bioInfo)
-	
+
 	return(
 		<>
 			<BackPage title={props?.title || 'About me'}/>
-			<article className="my-10 max-w-7xl mx-auto border shadow rounded-lg">
+			<section className="mb-10 sm:my-10 max-w-7xl mx-auto sm:border shadow sm:rounded-lg">
 				<div>
 					<div>
-						<img className="h-32 w-full object-cover lg:h-48 rounded-t-lg"
+						<img className="h-32 w-full object-cover lg:h-48 sm:rounded-t-lg"
 							 src={bg}
 							 alt="about page background" />
 					</div>
@@ -21,19 +19,19 @@ function AboutMePage({props}) {
 						<div className="-mt-12 sm:-mt-16 sm:flex sm:items-end sm:space-x-5">
 							<div className="flex">
 								<img className="h-24 w-24 rounded-full ring-4 ring-white sm:h-32 sm:w-32"
-									 src={avatar}
+									 src={bioInfo.profile.avatar}
 									 alt="about page avatar" />
 							</div>
 							<div
 								className="mt-6 sm:flex-1 sm:min-w-0 sm:flex sm:items-center sm:justify-end sm:space-x-6 sm:pb-1">
-								<div className="sm:hidden 2xl:block mt-6 min-w-0 flex-1">
-									<h1 className="text-2xl font-bold text-gray-900 truncate">{bioInfo.surname} {bioInfo.name} {bioInfo.patronymic}</h1>
+								<div className="sm:hidden lg:block mt-6 min-w-0 flex-1">
+									<h1 className="text-2xl font-bold text-gray-900 truncate">{bioInfo.profile.surname} {bioInfo.profile.name} {bioInfo.profile.patronymic}</h1>
 								</div>
 								<div
 									className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
 									<a href={'mailto:' + bioInfo.contacts.email}
-											className="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400">
-										
+									   className="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400">
+
 										<svg className="-ml-1 mr-2 h-5 w-5 text-gray-400"
 											 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
 											 aria-hidden="true">
@@ -44,8 +42,8 @@ function AboutMePage({props}) {
 										<span>Message</span>
 									</a>
 									<a href={'tel:' + bioInfo.contacts.phone.replace(/\D/g, '')}
-											className="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400">
-										
+									   className="inline-flex justify-center px-4 py-2 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400">
+
 										<svg className="-ml-1 mr-2 h-5 w-5 text-gray-400"
 											 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
 											 aria-hidden="true">
@@ -57,88 +55,287 @@ function AboutMePage({props}) {
 								</div>
 							</div>
 						</div>
-						<div className="hidden sm:block 2xl:hidden mt-6 min-w-0 flex-1">
-							<h1 className="text-2xl font-bold text-gray-900 truncate">Aleksin Danila Sergeevich</h1>
+						<div className="hidden sm:block lg:hidden mt-6 min-w-0 flex-1">
+							<h1 className="text-2xl font-bold text-gray-900 truncate">{bioInfo.profile.surname} {bioInfo.profile.name} {bioInfo.profile.patronymic}</h1>
 						</div>
 					</div>
 				</div>
-				
-				<div className="mt-6 sm:mt-2 2xl:mt-5">
-					<div className="border-b border-gray-200">
-						<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-							<nav className="-mb-px flex space-x-8" aria-label="Tabs">
-								<a href="#"
-								   className="border-pink-500 text-gray-900 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"
-								   aria-current="page"> Profile </a>
-								
-								<a href="#"
-								   className="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Calendar </a>
-								
-								<a href="#"
-								   className="border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm"> Recognition </a>
-							</nav>
-						</div>
+				<div className="mt-8 max-w-3xl mx-auto grid grid-cols-1 gap-6 sm:px-6 lg:max-w-7xl lg:grid-flow-col-dense lg:grid-cols-3">
+					<div className="space-y-6 lg:col-start-1 lg:col-span-2">
+						<section aria-labelledby="applicant-information-title">
+							<div className="bg-white border-b sm:border sm:rounded-lg mb-6">
+								<div className="px-4 py-5 sm:px-6">
+									<h2 id="applicant-information-title"
+										className="text-lg leading-6 font-medium text-gray-900">
+										Information about me
+									</h2>
+									<p className="mt-1 max-w-2xl text-sm text-gray-500">
+										Personal details and contacts
+									</p>
+								</div>
+								<div className="border-t border-gray-200 px-4 py-5 sm:px-6">
+									<dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-gray-500">
+												Profession
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												Frontend Developer
+											</dd>
+										</div>
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-gray-500">
+												Email address
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												<a className="text-cyan-700" href={"mailto:" + bioInfo.contacts.email}>{bioInfo.contacts.email}</a>
+											</dd>
+										</div>
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-gray-500">
+												Salary
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												$1500 / month
+											</dd>
+										</div>
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-gray-500">
+												Phone
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												<a className="text-cyan-700" href={"tel:+" + bioInfo.contacts.phone.replace(/[^0-9]/g, '')}>{bioInfo.contacts.phone}</a>
+											</dd>
+										</div>
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-gray-500">
+												Telegram
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												<a className="text-cyan-700" target="_blank" rel="noreferrer" href={"https://t.me/" + bioInfo.contacts.telegram}>@{bioInfo.contacts.telegram}</a>
+											</dd>
+										</div>
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-gray-500">
+												WhatsApp
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												<a className="text-cyan-700" target="_blank" rel="noreferrer" href={"https://wa.me/" + bioInfo.contacts.phone.replace(/[^0-9]/g, '')}>{bioInfo.contacts.phone}</a>
+											</dd>
+										</div>
+										<div className="sm:col-span-2">
+											<dt className="text-sm font-medium text-gray-500">
+												About
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												Fugiat ipsum ipsum deserunt culpa aute sint do nostrud anim incididunt
+												cillum culpa consequat. Excepteur qui ipsum aliquip consequat sint. Sit
+												id mollit nulla mollit nostrud in ea officia proident. Irure nostrud
+												pariatur mollit ad adipisicing reprehenderit deserunt qui eu.
+											</dd>
+										</div>
+										<div className="sm:col-span-2">
+											<dt className="text-sm font-medium text-gray-500">
+												Attachments
+											</dt>
+											<dd className="mt-1 text-sm text-gray-900">
+												<ul role="list"
+													className="border border-gray-200 rounded-md divide-y divide-gray-200">
+
+													<li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+														<div className="w-0 flex-1 flex items-center">
+															<svg className="flex-shrink-0 h-5 w-5 text-gray-400"
+																 x-description="Heroicon name: solid/paper-clip"
+																 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+																 fill="currentColor" aria-hidden="true">
+																<path fillRule="evenodd"
+																	  d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+																	  clipRule="evenodd">
+																</path>
+															</svg>
+															<span className="ml-2 flex-1 w-0 truncate">
+																Resume (Frontend) eng.pdf
+														  </span>
+														</div>
+														<div className="ml-4 flex-shrink-0">
+															<a href="#"
+															   className="font-medium text-cyan-600 hover:text-cyan-700">
+																Download
+															</a>
+														</div>
+													</li>
+
+													<li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
+														<div className="w-0 flex-1 flex items-center">
+															<svg className="flex-shrink-0 h-5 w-5 text-gray-400"
+																 x-description="Heroicon name: solid/paper-clip"
+																 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+																 fill="currentColor" aria-hidden="true">
+																<path fillRule="evenodd"
+																	  d="M8 4a3 3 0 00-3 3v4a5 5 0 0010 0V7a1 1 0 112 0v4a7 7 0 11-14 0V7a5 5 0 0110 0v4a3 3 0 11-6 0V7a1 1 0 012 0v4a1 1 0 102 0V7a3 3 0 00-3-3z"
+																	  clipRule="evenodd">
+																</path>
+															</svg>
+															<span className="ml-2 flex-1 w-0 truncate">
+																Resume (Frontend) rus.pdf
+														  </span>
+														</div>
+														<div className="ml-4 flex-shrink-0">
+															<a href="#"
+															   className="font-medium text-cyan-600 hover:text-cyan-700">
+																Download
+															</a>
+														</div>
+													</li>
+
+												</ul>
+											</dd>
+										</div>
+									</dl>
+								</div>
+							</div>
+						</section>
 					</div>
+
+					<section aria-labelledby="timeline-title" className="lg:col-start-3 lg:col-span-1">
+						<div className="bg-white px-4 py-5 border-t sm:border sm:rounded-lg sm:px-6">
+							<h2 id="timeline-title" className="text-lg font-medium text-gray-900">Work experience</h2>
+
+
+							<div className="mt-6 flow-root">
+								<ul role="list" className="-mb-8">
+									<li>
+										<div className="relative pb-8">
+											<span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+											<div className="relative flex space-x-3">
+												<div>
+                          							<span className="h-8 w-8 rounded-full bg-violet-700 flex items-center justify-center ring-8 ring-white">
+														<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+														  	<path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+														</svg>
+                          							</span>
+												</div>
+												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+													<div>
+														<div className="text-sm text-gray-500">
+															Studying frontend's skills (like courses, videos and docs)
+														</div>
+													</div>
+													<div className="text-right text-sm whitespace-nowrap text-gray-500">
+														<time dateTime="2018-10-20">2017 Feb 12</time>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div className="relative pb-8">
+											<span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+											<div className="relative flex space-x-3">
+												<div>
+                          							<span className="h-8 w-8 rounded-full bg-cyan-800 flex items-center justify-center ring-8 ring-white">
+														<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white">
+														  <path strokeLinecap="round" strokeLinejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+														</svg>
+                          							</span>
+												</div>
+												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+													<div>
+														<div className="text-sm text-gray-500">
+															Web developer <p className="font-medium text-gray-900">Medical University of Karaganda</p>
+														</div>
+													</div>
+													<div className="text-right text-sm whitespace-nowrap text-gray-500">
+														<time dateTime="2018-10-20">2018 Oct 20</time>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div className="relative pb-8">
+											<span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+											<div className="relative flex space-x-3">
+												<div>
+                          							<span className="h-8 w-8 rounded-full bg-red-800 flex items-center justify-center ring-8 ring-white">
+														<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white">
+														  	<path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5" />
+														</svg>
+                          							</span>
+												</div>
+												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+													<div>
+														<div className="text-sm text-gray-500">
+															Layout designer <p className="font-medium text-gray-900">Pula Market</p>
+														</div>
+													</div>
+													<div className="text-right text-sm whitespace-nowrap text-gray-500">
+														<time dateTime="2019-12-02">2019 Dec 02</time>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div className="relative pb-8">
+											<span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />
+											<div className="relative flex space-x-3">
+												<div>
+                          							<span className="h-8 w-8 rounded-full bg-green-800 flex items-center justify-center ring-8 ring-white">
+														<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-white">
+														  	<path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
+														</svg>
+                          							</span>
+												</div>
+												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+													<div>
+														<div className="text-sm text-gray-500">
+															JS-developer (affiliate marketing) <p className="font-medium text-gray-900">AFLA Group</p>
+														</div>
+													</div>
+													<div className="text-right text-sm whitespace-nowrap text-gray-500">
+														<time dateTime="2020-08-14">2020 Aug 14</time>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div className="relative pb-8">
+											<div className="relative flex space-x-3">
+												<div>
+                          							<span className="h-8 w-8 rounded-full bg-fuchsia-800 flex items-center justify-center ring-8 ring-white">
+														<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-white">
+														  <path strokeLinecap="round" strokeLinejoin="round" d="M21 7.5l-2.25-1.313M21 7.5v2.25m0-2.25l-2.25 1.313M3 7.5l2.25-1.313M3 7.5l2.25 1.313M3 7.5v2.25m9 3l2.25-1.313M12 12.75l-2.25-1.313M12 12.75V15m0 6.75l2.25-1.313M12 21.75V19.5m0 2.25l-2.25-1.313m0-16.875L12 2.25l2.25 1.313M21 14.25v2.25l-2.25 1.313m-13.5 0L3 16.5v-2.25" />
+														</svg>
+                          							</span>
+												</div>
+												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
+													<div>
+														<div className="text-sm text-gray-500">
+															Frontend developer <p className="font-medium text-gray-900">Hoster.KZ</p>
+														</div>
+													</div>
+													<div className="text-right text-sm whitespace-nowrap text-gray-500">
+														<time dateTime="2021-01-20">2021 Jan 20</time>
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div className="mt-6 flex flex-col justify-stretch">
+								<Link to="/contact"
+										className="inline-flex items-center justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500">
+									OFFER A JOB
+								</Link>
+							</div>
+						</div>
+					</section>
 				</div>
-				
-				<div className="my-6 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-					<dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-2">
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Phone</dt>
-							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.phone}</dd>
-						</div>
-						
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Email</dt>
-							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.email}</dd>
-						</div>
-						
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Telegram</dt>
-							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.telegram}</dd>
-						</div>
-						
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Instagram</dt>
-							<dd className="mt-1 text-sm text-gray-900">{bioInfo.contacts.instagram}</dd>
-						</div>
-						
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Location</dt>
-							<dd className="mt-1 text-sm text-gray-900">San Francisco</dd>
-						</div>
-						
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Sits</dt>
-							<dd className="mt-1 text-sm text-gray-900">Oasis, 4th floor</dd>
-						</div>
-						
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Salary</dt>
-							<dd className="mt-1 text-sm text-gray-900">$145,000</dd>
-						</div>
-						
-						<div className="sm:col-span-1">
-							<dt className="text-sm font-medium text-gray-500">Birthday</dt>
-							<dd className="mt-1 text-sm text-gray-900">June 8, 1990</dd>
-						</div>
-						
-						<div className="sm:col-span-2">
-							<dt className="text-sm font-medium text-gray-500">About</dt>
-							<dd className="mt-1 max-w-prose text-sm text-gray-900 space-y-5">
-								<p>Tincidunt quam neque in cursus viverra orci, dapibus nec tristique. Nullam ut sit
-									dolor consectetur urna, dui cras nec sed. Cursus risus congue arcu aenean posuere
-									aliquam.</p>
-								<p>Et vivamus lorem pulvinar nascetur non. Pulvinar a sed platea rhoncus ac mauris amet.
-									Urna, sem pretium sit pretium urna, senectus vitae. Scelerisque fermentum, cursus
-									felis dui suspendisse velit pharetra. Augue et duis cursus maecenas eget quam
-									lectus. Accumsan vitae nascetur pharetra rhoncus praesent dictum risus
-									suspendisse.</p>
-							</dd>
-						</div>
-					</dl>
-				</div>
-			</article>
+			</section>
+
 		</>
 	)
 }

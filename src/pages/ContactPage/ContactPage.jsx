@@ -86,11 +86,11 @@ function ContactPage({props}) {
     return(
         <>
             <BackPage title={props?.title || 'Contacts'} />
-            <div className="max-w-7xl mx-auto px-6 my-10">
-                <div className="relative border shadow rounded-lg">
+            <div className="max-w-7xl mx-auto sm:px-6 mb-10 sm:my-10">
+                <div className="relative sm:border sm:shadow sm:rounded-lg">
                     <div className="grid grid-cols-1 lg:grid-cols-3">
 
-                        <div className="relative overflow-hidden py-10 px-6 bg-gray-600 sm:px-10 xl:p-12 rounded-t-lg lg:rounded-none lg:rounded-l-lg">
+                        <div className="relative overflow-hidden py-10 px-6 bg-gray-600 sm:px-10 xl:p-12 sm:rounded-t-lg lg:rounded-none lg:rounded-l-lg">
                             <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
                                 <svg
                                     className="absolute inset-0 w-full h-full"
