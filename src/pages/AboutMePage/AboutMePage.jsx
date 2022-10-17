@@ -2,6 +2,8 @@ import BackPage from "../../components/BackPage/BackPage";
 import bg from "../../assets/img/about-bg.jpg";
 import {bioInfo} from "../../data/db";
 import {Link} from "react-router-dom";
+import resumeRus from "../../assets/files/resume [rus].pdf";
+import resumeEng from "../../assets/files/resume [eng].pdf";
 
 function AboutMePage({props}) {
 
@@ -154,11 +156,13 @@ function AboutMePage({props}) {
 																</path>
 															</svg>
 															<span className="ml-2 flex-1 w-0 truncate">
-																Resume (Frontend) eng.pdf
+																Resume Frontend [Eng].pdf
 														  </span>
 														</div>
 														<div className="ml-4 flex-shrink-0">
-															<a href="#"
+															<a href={resumeEng}
+															   target="_blank"
+															   rel="noreferrer"
 															   className="font-medium text-cyan-600 hover:text-cyan-700">
 																Download
 															</a>
@@ -177,11 +181,13 @@ function AboutMePage({props}) {
 																</path>
 															</svg>
 															<span className="ml-2 flex-1 w-0 truncate">
-																Resume (Frontend) rus.pdf
+																Resume Frontend [Rus].pdf
 														  </span>
 														</div>
 														<div className="ml-4 flex-shrink-0">
-															<a href="#"
+															<a href={resumeRus}
+															   target="_blank"
+															   rel="noreferrer"
 															   className="font-medium text-cyan-600 hover:text-cyan-700">
 																Download
 															</a>

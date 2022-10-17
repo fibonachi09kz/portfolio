@@ -13,21 +13,21 @@ import AboutMePage from "./pages/AboutMePage/AboutMePage";
 export default function App() {
     return (
         <div className="bg-white">
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden flex flex-col min-h-screen">
                 <HeaderNavigation />
+                <div className="flex-auto">
+                    <Routes>
+                        <Route index element={<Home />} />
+                        <Route path="about-me" element={<AboutMePage />} />
+                        <Route path="skills" element={<SkillsPage />} />
+                        <Route path="skills/:id" element={<SkillDetailPage />} />
 
-                <Routes>
-                    <Route index element={<Home />} />
-                    <Route path="about-me" element={<AboutMePage />} />
-                    <Route path="skills" element={<SkillsPage />} />
-                    <Route path="skills/:id" element={<SkillDetailPage />} />
+                        {/*<Route path="projects" element={<ProjectsPage />} />*/}
+                        {/*<Route path="projects/:id" element={<ProjectDetailPage />} />*/}
 
-                    {/*<Route path="projects" element={<ProjectsPage />} />*/}
-                    {/*<Route path="projects/:id" element={<ProjectDetailPage />} />*/}
-
-                    <Route path="contact" element={<ContactPage />} />
-                </Routes>
-
+                        <Route path="contact" element={<ContactPage />} />
+                    </Routes>
+                </div>
                 <Footer />
             </div>
         </div>
