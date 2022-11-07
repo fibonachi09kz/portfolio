@@ -141,9 +141,7 @@ function AboutMePage({props}) {
 												Attachments
 											</dt>
 											<dd className="mt-1 text-sm text-gray-900">
-												<ul role="list"
-													className="border border-gray-200 rounded-md divide-y divide-gray-200">
-
+												<ul className="border border-gray-200 rounded-md divide-y divide-gray-200">
 													<li className="pl-3 pr-4 py-3 flex items-center justify-between text-sm">
 														<div className="w-0 flex-1 flex items-center">
 															<svg className="flex-shrink-0 h-5 w-5 text-gray-400"
@@ -209,7 +207,7 @@ function AboutMePage({props}) {
 
 
 							<div className="mt-6 flow-root">
-								<ul role="list" className="-mb-8">
+								<ul className="-mb-8">
 									<li>
 										<div className="relative pb-8">
 											<span className="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true" />

@@ -13,7 +13,7 @@ function Home() {
     useEffect(() => {
         let isNonAnim = window.innerWidth <= 1024;
         setIsMobile(isNonAnim)
-    })
+    }, [])
     
     
     
