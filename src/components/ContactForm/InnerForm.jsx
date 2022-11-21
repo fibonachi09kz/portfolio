@@ -1,31 +1,19 @@
 import React from 'react';
+import {useFormik} from 'formik';
+import * as Yup from 'yup';
 import { useState, useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import {emailVar} from "../../form-vars";
-import useInput from "../../hooks/useInput";
-import {useFormik} from 'formik';
 import ConfirmText from "../FormAlerts/ConfirmText";
 import ErrorText from "../FormAlerts/ErrorText";
 import {ExclamationCircleIcon} from "@heroicons/react/solid";
 
-const validate = values => {
-	const errors = {}
-	
-	if ( !values.name ) {
-		errors.name = 'Required field'
-	}
-	
-	if ( !values.email ) {
-		errors.email = 'Required field';
-	} else if ( !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email) ) {
-		errors.email = 'Invalid email address';
-	}
-	
-	return errors
-}
-
-
 const InnerForm = () => {
+	const [loader, setLoader] = useState(false);
+	const [error, setError] = useState(false);
+	const [confirm, setConfirm] = useState(false);
+	
+	const form = useRef();
 	
 	const formik = useFormik({
 		initialValues: {
@@ -35,53 +23,34 @@ const InnerForm = () => {
 			phone: '',
 			message: ''
 		},
-		validate,
-		onSubmit: values => console.log(JSON.stringify(values, null, 2))
+		validationSchema: Yup.object({
+			name: Yup.string().min(1, 'Minimum 1 character').required('Required field'),
+			email: Yup.string().email('Please enter a valid email').required('Required field'),
+			telegram: Yup.string().min(4, 'Minimum 4 characters'),
+			phone: Yup.string(),
+			message: Yup.string().max(1000, 'No more than 1000 characters').required('Required field')
+		}),
+		onSubmit: (values, {resetForm}) => {
+			setLoader(true);
+			setConfirm(false)
+			setError(false)
+			
+			emailjs.sendForm(emailVar.sId, 'template_tno4i2u', form.current, emailVar.publicKey)
+				.then((result) => {
+					setError(false)
+					setLoader(false)
+					setConfirm(true)
+					resetForm({values: ''})
+				}, (error) => {
+					setError(true)
+					setConfirm(false)
+				});
+		}
 	})
-	
-	// const form = useRef();
-	//
-	//
-	// const nameField = useInput('');
-	// const emailField = useInput('');
-	// const tgField = useInput('');
-	// const phoneField = useInput('');
-	// const messageField = useInput('');
-	//
-	//
-	//
-	// const [loader, setLoader] = useState(false);
-	// const [error, setError] = useState(false)
-	// const [confirm, setConfirm] = useState(false)
-	//
-	// const handleSubmit = (e) => {
-	// 	e.preventDefault();
-	// 	setLoader(true);
-	// 	setConfirm(false)
-	// 	setError(false)
-	//
-	// 	emailjs.sendForm(emailVar.sId, 'template_tno4i2u', form.current, emailVar.publicKey)
-	// 		.then((result) => {
-	// 			setError(false)
-	// 			setLoader(false)
-	// 			setConfirm(true)
-	//
-	// 			nameField.setValue('')
-	// 			emailField.setValue('')
-	// 			tgField.setValue('')
-	// 			phoneField.setValue('')
-	// 			messageField.setValue('')
-	//
-	// 		}, (error) => {
-	// 			setError(true)
-	// 			setConfirm(false)
-	// 		});
-	//
-	// };
 	
 	return (
 		
-		<form id="contact-form" onSubmit={formik.handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
+		<form id="contact-form" ref={form} onSubmit={formik.handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 			<div>
 				<label htmlFor="first-name" className="block text-sm font-medium text-gray-900">
 					Name
@@ -91,13 +60,11 @@ const InnerForm = () => {
 						<input
 							type="text"
 							name="name"
-							required
 							autoComplete="given-name"
-							className={formik.errors.name ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
-							value={formik.values.name}
-							onChange={formik.handleChange}
+							className={formik.errors.name && formik.touched.name ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							{...formik.getFieldProps('name')}
 						/>
-						{formik.errors.name
+						{formik.errors.name && formik.touched.name
 							?
 							<div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
 								<ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
@@ -106,7 +73,7 @@ const InnerForm = () => {
 							null
 						}
 					</div>
-					{formik.errors.name
+					{formik.errors.name && formik.touched.name
 						?
 						<p className="text-sm text-red-600">
 							{formik.errors.name}
@@ -125,13 +92,11 @@ const InnerForm = () => {
 						<input
 							type="email"
 							name="email"
-							required
 							autoComplete="email"
-							className={formik.errors.email ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
-							value={formik.values.email}
-							onChange={formik.handleChange}
+							className={formik.errors.email && formik.touched.email ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							{...formik.getFieldProps('email')}
 						/>
-						{formik.errors.email
+						{formik.errors.email && formik.touched.email
 							?
 							<div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
 								<ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
@@ -140,7 +105,7 @@ const InnerForm = () => {
 							null
 						}
 					</div>
-					{formik.errors.email
+					{formik.errors.email && formik.touched.email
 						?
 						<p className="text-sm text-red-600">
 							{formik.errors.email}
@@ -160,14 +125,34 @@ const InnerForm = () => {
 					</span>
 				</div>
 				<div className="mt-1">
-					<input
-						type="text"
-						name="telegram"
-						className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
-						aria-describedby="tg-optional"
-						value={formik.values.telegram}
-						onChange={formik.handleChange}
-					/>
+					<div className="relative flex rounded-md shadow-sm">
+						<span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-xl font-medium">
+						  @
+						</span>
+						<input
+							type="text"
+							name="telegram"
+							className={formik.errors.telegram && formik.touched.telegram ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-none rounded-r-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 rounded-none rounded-r-md border-gray-300" }
+							aria-describedby="tg-optional"
+							{...formik.getFieldProps('telegram')}
+						/>
+						{formik.errors.telegram && formik.touched.telegram
+							?
+							<div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+								<ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
+							</div>
+							:
+							null
+						}
+					</div>
+					{formik.errors.telegram && formik.touched.telegram
+						?
+						<p className="text-sm text-red-600">
+							{formik.errors.telegram}
+						</p>
+						:
+						null
+					}
 				</div>
 			</div>
 			<div>
@@ -180,15 +165,31 @@ const InnerForm = () => {
 					</span>
 				</div>
 				<div className="mt-1">
-					<input
-						type="text"
-						name="phone"
-						autoComplete="tel"
-						className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md"
-						aria-describedby="phone-optional"
-						value={formik.values.phone}
-						onChange={formik.handleChange}
-					/>
+					<div className="relative">
+						<input
+							type="text"
+							name="phone"
+							autoComplete="phone"
+							className={formik.errors.phone && formik.touched.phone ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							{...formik.getFieldProps('phone')}
+						/>
+						{formik.errors.phone && formik.touched.phone
+							?
+							<div className="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
+								<ExclamationCircleIcon className="h-5 w-5 text-red-500" aria-hidden="true" />
+							</div>
+							:
+							null
+						}
+					</div>
+					{formik.errors.phone && formik.touched.phone
+						?
+						<p className="text-sm text-red-600">
+							{formik.errors.phone}
+						</p>
+						:
+						null
+					}
 				</div>
 			</div>
 			<div className="sm:col-span-2">
@@ -201,36 +202,44 @@ const InnerForm = () => {
 					</span>
 				</div>
 				<div className="mt-1">
-					<textarea
-						name="message"
-						rows={4}
-						required
-						className="py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border border-gray-300 rounded-md"
-						aria-describedby="message-max"
-						value={formik.values.message}
-						onChange={formik.handleChange}
-					/>
+					<div className="relative">
+						<textarea
+							name="message"
+							rows={4}
+							className={formik.errors.message && formik.touched.message ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							aria-describedby="message-max"
+							{...formik.getFieldProps('message')}
+						/>
+					</div>
+					{formik.errors.message && formik.touched.message
+						?
+						<p className="text-sm text-red-600">
+							{formik.errors.message}
+						</p>
+						:
+						null
+					}
 				</div>
 			</div>
 			<div className="sm:col-span-2 flex flex-col sm:flex-row sm:justify-end items-center gap-4">
-				{/*{*/}
-				{/*	confirm ? <ConfirmText/> : null*/}
-				{/*}*/}
-				{/*{*/}
-				{/*	error ? <ErrorText/> : null*/}
-				{/*}*/}
+				{
+					confirm ? <ConfirmText/> : null
+				}
+				{
+					error ? <ErrorText/> : null
+				}
 				<button
 					type="submit"
-					// disabled={loader}
+					disabled={loader}
 					className="gap-1 ml-auto w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
 				>
 					Send message
-					{/*{*/}
-					{/*	loader ?*/}
-					{/*		<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 form-btn__loading" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>*/}
-					{/*			<path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />*/}
-					{/*		</svg> : ''*/}
-					{/*}*/}
+					{
+						loader ?
+						<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 form-btn__loading" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+							<path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+						</svg> : ''
+					}
 				</button>
 			</div>
 		</form>

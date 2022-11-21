@@ -1,14 +1,18 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import logo from "../../logo.svg";
 import {Popover, Transition} from "@headlessui/react";
 import {MenuIcon, XIcon} from "@heroicons/react/outline";
 import {Link} from "react-router-dom";
 import { Fragment } from 'react'
 
+
 function HeaderNavigation() {
+    
+    const buttonRef = useRef();
+    
         return (
             <Popover as="header" className="relative">
-                <div className="bg-gray-900 pt-6">
+                <div className="bg-gray-900 py-6">
                     <nav
                         className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
                         aria-label="Global"
@@ -36,9 +40,6 @@ function HeaderNavigation() {
                                 </Link>
                                 <Link to="/about-me" className="text-base font-medium text-white hover:text-gray-300">
                                     About me
-                                </Link>
-                                <Link to="/skills" className="text-base font-medium text-white hover:text-gray-300">
-                                    Tech stack
                                 </Link>
                                 <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                                     Projects
@@ -72,7 +73,7 @@ function HeaderNavigation() {
                                 </div>
 
                                 <div className="-mr-2">
-                                    <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+                                    <Popover.Button ref={buttonRef} className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
                                         <span className="sr-only">Close menu</span>
                                         <XIcon className="h-6 w-6" aria-hidden="true" />
                                     </Popover.Button>
@@ -80,20 +81,16 @@ function HeaderNavigation() {
                             </div>
                             <div className="pt-5 pb-6">
                                 <div className="px-2 space-y-1">
-
-                                    <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Home
                                     </Link>
-                                    <Link to="/about-me" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/about-me" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         About me
                                     </Link>
-                                    <Link to="/skills" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
-                                        Tech stack
-                                    </Link>
-                                    <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Projects
                                     </Link>
-                                    <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/contact" onClick={() => buttonRef.current?.click()}  className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
                                         Contact
                                     </Link>
                                 </div>

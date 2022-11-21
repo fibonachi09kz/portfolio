@@ -16,11 +16,6 @@ function Footer() {
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="/skills" className="text-base font-medium text-white hover:text-gray-300">
-                            Tech stack
-                        </Link>
-                    </div>
-                    <div className="px-5 py-2">
                         <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
                             Projects
                         </Link>

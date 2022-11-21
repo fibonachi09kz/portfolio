@@ -26,3 +26,29 @@ code {
 .form-btn__loading {
     animation: rotate 1s infinite linear;
 }
+
+.fadeIn {
+    animation: 0.2s fadeIn forwards;
+}
+
+.fadeOut {
+    animation: 0.2s fadeOut forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
