@@ -22,7 +22,7 @@ function Footer() {
                     </div>
                     <div className="px-5 py-2">
                         <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
-                            Contact
+                            Contacts
                         </Link>
                     </div>
                 </nav>

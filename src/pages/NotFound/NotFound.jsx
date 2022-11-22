@@ -5,7 +5,7 @@ function NotFound({props}) {
 	
 	return(
 		<>
-			<BackPage title={props?.title || 'Contacts'} />
+			<BackPage title={props?.title || 'Page not found'} />
 			<div className="bg-white flex-grow px-4 py-16 sm:px-6 sm:py-24 md:grid md:place-items-center lg:px-8">
 				<div className="max-w-max mx-auto">
 					<div className="sm:flex">

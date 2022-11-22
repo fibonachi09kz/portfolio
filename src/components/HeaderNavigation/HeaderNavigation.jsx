@@ -45,7 +45,7 @@ function HeaderNavigation() {
                                     Projects
                                 </Link>
                                 <Link to="/contact" className="text-base font-medium text-white hover:text-gray-300">
-                                    Contact
+                                    Contacts
                                 </Link>
                             </div>
                         </div>
@@ -91,7 +91,7 @@ function HeaderNavigation() {
                                         Projects
                                     </Link>
                                     <Link to="/contact" onClick={() => buttonRef.current?.click()}  className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
-                                        Contact
+                                        Contacts
                                     </Link>
                                 </div>
                             </div>
