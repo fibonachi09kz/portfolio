@@ -19,7 +19,7 @@ function Home() {
     
     return(
         <main>
-            <div id="about" className="py-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+            <div id="about" className="py-10 bg-gray-900 sm:pt-16 lg:pt-8 lg:pb-0 lg:overflow-hidden">
                 <div className="mx-auto max-w-7xl lg:px-8">
                     <div className="lg:grid lg:grid-cols-2 lg:gap-8">
                         <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
@@ -30,7 +30,7 @@ function Home() {
                                     rel="noreferrer"
                                     className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
                                 >
-                                            <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-teal-500 to-cyan-600 rounded-full">
+                                            <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-indigo-900 via-sky-800 to-purple-600 rounded-full">
                                             Ready to work
                                             </span>
                                     <span className="ml-4 text-sm">View on HH.ru</span>
@@ -62,9 +62,9 @@ function Home() {
                                 </div>
                                 <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                                     <span className="block">Alexin Danila</span>
-                                    <span className="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-teal-200 to-cyan-400 sm:pb-5">
-                                                Frontend Developer
-                                            </span>
+                                    <span className="pb-3 block text-gradient sm:pb-5">
+                                        Frontend Developer
+                                    </span>
                                 </h1>
                                 <p className="text-base text-gray-300 sm:text-xl lg:text-lg xl:text-xl">
                                     To invite me to participate in the development of something, just leave your Email and I will contact you soon!

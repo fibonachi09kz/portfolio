@@ -6,25 +6,25 @@ import {Link} from "react-router-dom";
 function Skills() {
 
     return (
-        <div id="stack" className="bg-gray-100 py-16">
+        <div id="stack" className="bg-gray-900 mb-16 pt-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 className="text-base font-semibold tracking-wider text-cyan-600 text-center">&lt;TechSkills/&gt;</h2>
-                <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl text-center">
-                    Tech Stack
+                <h2 className="text-xl font-semibold tracking-wider text-gray-300 text-center">&lt;TechSkills/&gt;</h2>
+                <p className="mt-2 text-3xl font-extrabold text-gradient tracking-normal sm:text-4xl !leading-normal text-center">
+                    Technology Stack
                 </p>
                 <div className="mt-12">
                     <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                         {skills.map((skill) => (
                             <Link to={`skills/${skill.id}`}
                                 key={skill.id}
-                                className="relative cursor-pointer rounded-lg flex items-center space-x-3 px-6 py-5 border border-gray-300 bg-white shadow-sm hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500"
+                                className="relative transition-all cursor-pointer rounded-lg flex items-center space-x-3 px-6 py-5 bg-gray-800 shadow-sm hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-cyan-500"
                             >
                                 <div className="flex-shrink-0 h-12 w-12 flex items-center justify-center">
                                     <img className="max-h-full" src={skill.imageUrl} alt="" />
                                 </div>
                                 <div className="flex-1 min-w-0">
-                                    <p className="text-sm font-medium text-gray-900">{skill.title}</p>
-                                    <p className="text-sm text-gray-500 truncate">{skill.extra}</p>
+                                    <p className="text-base font-medium text-white">{skill.title}</p>
+                                    <p className="text-sm text-gray-400 truncate">{skill.extra}</p>
                                 </div>
                             </Link>
                         ))}

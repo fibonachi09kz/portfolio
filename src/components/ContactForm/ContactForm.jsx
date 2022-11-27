@@ -5,14 +5,14 @@ function ContactForm() {
 
     return (
         <>
-            <div className="bg-gray-100">
+            <div className="bg-gray-900">
                 <div className="max-w-7xl mx-auto py-16 px-4 sm:py-16 sm:px-6 lg:px-8">
-                    <h2 className="text-base font-semibold tracking-wider text-cyan-600 text-center">&lt;ContactForm/&gt;</h2>
-                    <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl text-center mb-12">Contact with me</p>
-                    <div className="relative bg-white rounded-lg border border-gray-300 shadow-sm">
+                    <h2 className="text-xl font-semibold tracking-wider text-gray-300 text-center">&lt;ContactForm/&gt;</h2>
+                    <p className="mt-2 text-3xl font-extrabold text-gradient tracking-normal sm:text-4xl !leading-normal text-center">Contact with me</p>
+                    <div className="mt-12 relative bg-gray-800 rounded-lg shadow-sm">
                         <div className="grid grid-cols-1 lg:grid-cols-3">
 
-                            <div className="relative overflow-hidden py-10 px-6 bg-cyan-800 sm:px-10 xl:p-12 rounded-t-lg lg:rounded-none lg:rounded-l-lg">
+                            <div className="relative overflow-hidden py-10 px-6 bg-indigo-900 sm:px-10 xl:p-12 rounded-t-lg lg:rounded-none lg:rounded-l-lg">
                                 <div className="absolute inset-0 pointer-events-none sm:hidden" aria-hidden="true">
                                     <svg
                                         className="absolute inset-0 w-full h-full"

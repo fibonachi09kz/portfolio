@@ -8,7 +8,7 @@ export const projectList = [
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
+            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
     },
     {
         name: 'Jane Cooper',
@@ -17,7 +17,7 @@ export const projectList = [
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
+            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
     },
     {
         name: 'Jane Cooper',
@@ -26,7 +26,7 @@ export const projectList = [
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
+            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
     },
     {
         name: 'Jane Cooper',
@@ -35,7 +35,7 @@ export const projectList = [
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://images.unsplash.com/photo-1661961111184-11317b40adb2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80',
+            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
     }
 ]
 export const skills = [

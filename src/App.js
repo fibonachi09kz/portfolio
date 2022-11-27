@@ -22,7 +22,7 @@ export default function App() {
     }, [location, displayLocation]);
     
     return (
-        <div className="bg-white">
+        <div className="bg-gray-900">
             <div className="relative overflow-hidden flex flex-col min-h-screen">
                 <HeaderNavigation />
                 <div className={`flex-auto flex flex-col ${transitionStage}`}

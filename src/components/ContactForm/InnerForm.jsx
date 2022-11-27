@@ -52,7 +52,7 @@ const InnerForm = () => {
 		
 		<form id="contact-form" ref={form} onSubmit={formik.handleSubmit} className="mt-6 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-8">
 			<div>
-				<label htmlFor="first-name" className="block text-sm font-medium text-gray-900">
+				<label htmlFor="first-name" className="block text-sm font-medium text-gray-400">
 					Name
 				</label>
 				<div className="mt-1">
@@ -61,7 +61,7 @@ const InnerForm = () => {
 							type="text"
 							name="name"
 							autoComplete="given-name"
-							className={formik.errors.name && formik.touched.name ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							className={formik.errors.name && formik.touched.name ? "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-cyan-400 focus:border-cyan-400 border-gray-700 rounded-md" }
 							{...formik.getFieldProps('name')}
 						/>
 						{formik.errors.name && formik.touched.name
@@ -84,7 +84,7 @@ const InnerForm = () => {
 				</div>
 			</div>
 			<div>
-				<label htmlFor="email" className="block text-sm font-medium text-gray-900">
+				<label htmlFor="email" className="block text-sm font-medium text-gray-400">
 					Email
 				</label>
 				<div className="mt-1">
@@ -93,7 +93,7 @@ const InnerForm = () => {
 							type="email"
 							name="email"
 							autoComplete="email"
-							className={formik.errors.email && formik.touched.email ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							className={formik.errors.email && formik.touched.email ? "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-cyan-400 focus:border-cyan-400 border-gray-700 rounded-md" }
 							{...formik.getFieldProps('email')}
 						/>
 						{formik.errors.email && formik.touched.email
@@ -117,7 +117,7 @@ const InnerForm = () => {
 			</div>
 			<div>
 				<div className="flex justify-between">
-					<label htmlFor="phone" className="block text-sm font-medium text-gray-900">
+					<label htmlFor="phone" className="block text-sm font-medium text-gray-400">
 						Telegram
 					</label>
 					<span id="tg-optional" className="text-sm text-gray-500">
@@ -126,13 +126,13 @@ const InnerForm = () => {
 				</div>
 				<div className="mt-1">
 					<div className="relative flex rounded-md shadow-sm">
-						<span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-300 bg-gray-50 text-gray-500 text-xl font-medium">
+						<span className="inline-flex items-center px-3 rounded-l-md border border-r-0 border-gray-700 bg-gray-800 text-gray-500 text-xl font-medium">
 						  @
 						</span>
 						<input
 							type="text"
 							name="telegram"
-							className={formik.errors.telegram && formik.touched.telegram ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-none rounded-r-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 rounded-none rounded-r-md border-gray-300" }
+							className={formik.errors.telegram && formik.touched.telegram ? "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-cyan-400 focus:border-cyan-400 border-gray-700 rounded-r" }
 							aria-describedby="tg-optional"
 							{...formik.getFieldProps('telegram')}
 						/>
@@ -157,7 +157,7 @@ const InnerForm = () => {
 			</div>
 			<div>
 				<div className="flex justify-between">
-					<label htmlFor="phone" className="block text-sm font-medium text-gray-900">
+					<label htmlFor="phone" className="block text-sm font-medium text-gray-400">
 						Phone
 					</label>
 					<span id="phone-optional" className="text-sm text-gray-500">
@@ -170,7 +170,7 @@ const InnerForm = () => {
 							type="text"
 							name="phone"
 							autoComplete="phone"
-							className={formik.errors.phone && formik.touched.phone ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							className={formik.errors.phone && formik.touched.phone ? "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-cyan-400 focus:border-cyan-400 border-gray-700 rounded-md" }
 							{...formik.getFieldProps('phone')}
 						/>
 						{formik.errors.phone && formik.touched.phone
@@ -194,7 +194,7 @@ const InnerForm = () => {
 			</div>
 			<div className="sm:col-span-2">
 				<div className="flex justify-between">
-					<label htmlFor="message" className="block text-sm font-medium text-gray-900">
+					<label htmlFor="message" className="block text-sm font-medium text-gray-400">
 						Message
 					</label>
 					<span id="message-max" className="text-sm text-gray-500">
@@ -206,7 +206,7 @@ const InnerForm = () => {
 						<textarea
 							name="message"
 							rows={4}
-							className={formik.errors.message && formik.touched.message ? "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block w-full shadow-sm text-gray-900 focus:ring-cyan-400 focus:border-cyan-400 border-gray-300 rounded-md" }
+							className={formik.errors.message && formik.touched.message ? "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-red-500 focus:border-red-500 rounded-md ring-red-500 border-red-500" : "py-3 px-4 block bg-gray-800 w-full shadow-sm text-gray-400 focus:ring-cyan-400 focus:border-cyan-400 border-gray-700 rounded-md" }
 							aria-describedby="message-max"
 							{...formik.getFieldProps('message')}
 						/>
@@ -231,7 +231,7 @@ const InnerForm = () => {
 				<button
 					type="submit"
 					disabled={loader}
-					className="gap-1 ml-auto w-full inline-flex items-center justify-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gradient-to-r from-teal-500 to-cyan-600 hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
+					className="gap-1 ml-auto w-full inline-flex items-center justify-center px-6 py-3 rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gray-700 hover:bg-gradient-to-r hover:from-indigo-700 hover:via-sky-800 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
 				>
 					Send message
 					{

@@ -56,3 +56,11 @@ code {
         transform: translateX(-10px);
     }
 }
+
+.text-gradient {
+    background: linear-gradient(90deg,#4ca5ff 2.34%,#b673f8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-fill-color: transparent;
+}

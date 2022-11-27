@@ -71,7 +71,7 @@ function HeaderForm() {
 						type="email"
 						{...emailField.controls}
 						placeholder="Ваш Email"
-						className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+						className="block w-full px-4 py-3 rounded-md border-0 text-base bg-gray-800 text-gray-400 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
 						required
 					/>
 				</div>
@@ -79,7 +79,7 @@ function HeaderForm() {
 					<button
 						type="submit"
 						disabled={loader}
-						className="flex justify-center gap-1 block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
+						className="flex justify-center gap-1 block bg-gray-700 w-full py-3 px-4 rounded-md shadow hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 text-white font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
 					>
 						Contact me faster!
 						{
