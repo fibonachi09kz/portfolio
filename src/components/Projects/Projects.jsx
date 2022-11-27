@@ -6,7 +6,7 @@ import {projectList} from "../../data/db";
 
 function Projects () {
     return (
-        <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 mb-16">
+        <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:pt-16 mb-16">
             <h2 className="text-xl font-semibold tracking-wider text-gray-300 text-center">&lt;Projects/&gt;</h2>
             <p className="mt-2 text-3xl font-extrabold text-gradient tracking-normal sm:text-4xl !leading-normal text-center">Projects List</p>
             <ul className="grid mt-12 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
