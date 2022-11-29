@@ -17,7 +17,7 @@ function Skills() {
                         {skills.map((skill) => (
                             <Link to={`skills/${skill.id}`}
                                 key={skill.id}
-                                className="relative transition-all cursor-pointer rounded-lg flex items-center space-x-3 px-6 py-5 bg-gray-800 shadow-sm hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-cyan-500"
+                                className="relative transition-all cursor-pointer rounded-lg flex items-center space-x-3 px-6 py-5 bg-gray-800 shadow-sm hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                             >
                                 <div className="flex-shrink-0 h-12 w-12 flex items-center justify-center">
                                     <img className="max-h-full" src={skill.imageUrl} alt="" />

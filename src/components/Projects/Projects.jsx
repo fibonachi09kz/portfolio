@@ -22,7 +22,7 @@ function Projects () {
                                 <dd className="text-gray-400 text-sm">{item.title}</dd>
                                 <dd className="mt-3 flex-wrap flex gap-1">
                                     {item.categories.map((cat) => (
-                                        <span key={uuidv4()} className="px-2 py-1 text-cyan-600 text-xs font-medium bg-gray-700 rounded-full">
+                                        <span key={uuidv4()} className="px-2 py-1 text-indigo-600 text-xs font-medium bg-gray-700 rounded-full">
                                             {cat}
                                         </span>
                                     ))}

@@ -32,7 +32,7 @@ function AboutMePage({props}) {
 								<div
 									className="mt-6 flex flex-col justify-stretch space-y-3 sm:flex-row sm:space-y-0 sm:space-x-4">
 									<a href={'mailto:' + bioInfo.contacts.email}
-									   className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-cyan-400">
+									   className="inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500">
 
 										<svg className="-ml-1 mr-2 h-5 w-5 text-gray-400"
 											 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -44,7 +44,7 @@ function AboutMePage({props}) {
 										<span>Message</span>
 									</a>
 									<a href={'tel:' + bioInfo.contacts.phone.replace(/\D/g, '')}
-									   className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-cyan-400">
+									   className="inline-flex justify-center items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500">
 
 										<svg className="-ml-1 mr-2 h-5 w-5 text-gray-400"
 											 xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
@@ -221,7 +221,7 @@ function AboutMePage({props}) {
 												</div>
 												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
 													<div>
-														<div className="text-sm text-gray-400">
+														<div className="text-sm text-white">
 															Studying frontend's skills (like courses, videos and docs)
 														</div>
 													</div>
@@ -245,8 +245,8 @@ function AboutMePage({props}) {
 												</div>
 												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
 													<div>
-														<div className="text-sm text-gray-400">
-															Web developer <p className="font-medium text-gray-500">Medical University of Karaganda</p>
+														<div className="text-sm text-white">
+															Web developer <p className="text-gray-500">Medical University of Karaganda</p>
 														</div>
 													</div>
 													<div className="text-right text-sm whitespace-nowrap text-gray-400">
@@ -269,7 +269,7 @@ function AboutMePage({props}) {
 												</div>
 												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
 													<div>
-														<div className="text-sm text-gray-400">
+														<div className="text-sm text-white">
 															Layout designer <p className="font-medium text-gray-500">Pula Market</p>
 														</div>
 													</div>
@@ -293,7 +293,7 @@ function AboutMePage({props}) {
 												</div>
 												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
 													<div>
-														<div className="text-sm text-gray-400">
+														<div className="text-sm text-white">
 															JS-developer (affiliate marketing) <p className="font-medium text-gray-500">AFLA Group</p>
 														</div>
 													</div>
@@ -316,7 +316,7 @@ function AboutMePage({props}) {
 												</div>
 												<div className="min-w-0 flex-1 pt-1.5 flex justify-between space-x-4">
 													<div>
-														<div className="text-sm text-gray-400">
+														<div className="text-sm text-white">
 															Frontend developer <p className="font-medium text-gray-500">Hoster.KZ</p>
 														</div>
 													</div>
@@ -331,7 +331,7 @@ function AboutMePage({props}) {
 							</div>
 							<div className="mt-6 flex flex-col justify-stretch">
 								<Link to="/contact"
-										className="flex justify-center gap-1 block bg-gray-600 w-full py-3 px-4 rounded-md shadow hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 text-white font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-gray-900 disabled:cursor-not-allowed disabled:opacity-50">
+										className="flex justify-center gap-1 block bg-gray-600 w-full py-3 px-4 rounded-md shadow hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 text-white font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-gray-900 disabled:cursor-not-allowed disabled:opacity-50">
 									OFFER A JOB
 								</Link>
 							</div>

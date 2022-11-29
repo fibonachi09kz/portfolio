@@ -7,7 +7,7 @@ const ParticlesComp = () => {
 		await loadFull(engine);
 	}, []);
 	
-	
+	let particlesCount = window.innerWidth <= 768 ? 50 : 100;
 	
 	return (
 		<Particles
@@ -48,7 +48,7 @@ const ParticlesComp = () => {
 						straight: false,
 					},
 					number: {
-						value: 100,
+						value: particlesCount,
 					},
 					opacity: {
 						value: 0.5,

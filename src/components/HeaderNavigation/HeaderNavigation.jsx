@@ -28,7 +28,7 @@ function HeaderNavigation() {
                                     />
                                 </Link>
                                 <div className="-mr-2 flex items-center md:hidden">
-                                    <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
+                                    <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                                         <span className="sr-only">Open main menu</span>
                                         <MenuIcon className="h-6 w-6" aria-hidden="true" />
                                     </Popover.Button>
@@ -62,7 +62,7 @@ function HeaderNavigation() {
                     leaveTo="opacity-0 scale-95"
                 >
                     <Popover.Panel focus className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden z-50">
-                        <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                        <div className="rounded-lg shadow-md bg-gray-700 ring-1 ring-black ring-opacity-5 overflow-hidden">
                             <div className="px-5 pt-4 flex items-center justify-between">
                                 <div>
                                     <img
@@ -73,7 +73,7 @@ function HeaderNavigation() {
                                 </div>
 
                                 <div className="-mr-2">
-                                    <Popover.Button ref={buttonRef} className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
+                                    <Popover.Button ref={buttonRef} className="bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
                                         <span className="sr-only">Close menu</span>
                                         <XIcon className="h-6 w-6" aria-hidden="true" />
                                     </Popover.Button>
@@ -81,16 +81,16 @@ function HeaderNavigation() {
                             </div>
                             <div className="pt-5 pb-6">
                                 <div className="px-2 space-y-1">
-                                    <Link to="/" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">
                                         Home
                                     </Link>
-                                    <Link to="/about-me" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/about-me" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">
                                         About me
                                     </Link>
-                                    <Link to="/" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">
                                         Projects
                                     </Link>
-                                    <Link to="/contact" onClick={() => buttonRef.current?.click()}  className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
+                                    <Link to="/contact" onClick={() => buttonRef.current?.click()}  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">
                                         Contacts
                                     </Link>
                                 </div>

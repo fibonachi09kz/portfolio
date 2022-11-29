@@ -6,7 +6,7 @@ import useInput from "../../hooks/useInput";
 function ConfirmText() {
 	return (
 		<>
-			<p className="text-cyan-500 mt-2 font-medium flex items-center gap-1">
+			<p className="text-indigo-400 mt-2 font-medium flex items-center gap-1">
 				<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
 					<path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
 				</svg>
@@ -71,7 +71,7 @@ function HeaderForm() {
 						type="email"
 						{...emailField.controls}
 						placeholder="Ваш Email"
-						className="block w-full px-4 py-3 rounded-md border-0 text-base bg-gray-800 text-gray-400 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+						className="block w-full px-4 py-3 rounded-md border-0 text-base bg-gray-800 text-gray-400 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:ring-offset-gray-900"
 						required
 					/>
 				</div>
@@ -79,7 +79,7 @@ function HeaderForm() {
 					<button
 						type="submit"
 						disabled={loader}
-						className="flex justify-center gap-1 block bg-gray-700 w-full py-3 px-4 rounded-md shadow hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 text-white font-medium focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
+						className="flex justify-center gap-1 block bg-gray-700 w-full py-3 px-4 rounded-md shadow hover:bg-gradient-to-r hover:from-indigo-900 hover:via-sky-800 hover:to-purple-600 text-white font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-gray-900 disabled:cursor-not-allowed disabled:opacity-50"
 					>
 						Contact me faster!
 						{
