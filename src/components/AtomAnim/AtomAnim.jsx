@@ -8,7 +8,7 @@ export function AtomAnim() {
     return (
         <Canvas shadows>
             <directionalLight position={[1, 3, 2]} castShadow />
-            <hemisphereLight intensity={1.5} groundColor="red" />
+            <hemisphereLight intensity={1.5} groundColor="#ffffff" />
             <Suspense fallback={null}>
                 <Bounds fit clip observe>
                     <Float speed={10} floatingRange={[0.2, 0]}>
@@ -25,7 +25,7 @@ function Atom({props}) {
     const { nodes } = useGLTF('/react-transformed.glb')
     return (
         <mesh castShadow receiveShadow geometry={nodes.atom.geometry} {...props} dispose={null}>
-            <meshPhongMaterial color="#22d3ee"/>
+            <meshPhongMaterial color="#006fe6" emissive="#000000" specular="#00c0f0" shininess="0" wireframe/>
         </mesh>
     )
 }
