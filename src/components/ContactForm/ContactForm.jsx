@@ -5,7 +5,7 @@ function ContactForm() {
 
     return (
         <>
-            <div className="bg-gray-900">
+            <div className="">
                 <div className="max-w-7xl mx-auto px-4 sm:py-16 sm:px-6 lg:px-8">
                     <h2 className="text-xl font-semibold tracking-wider text-gray-300 text-center">&lt;ContactForm/&gt;</h2>
                     <p className="mt-2 text-3xl font-extrabold text-gradient tracking-normal sm:text-4xl !leading-normal text-center">Contact with me</p>

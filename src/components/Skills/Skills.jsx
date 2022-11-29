@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 function Skills() {
 
     return (
-        <div id="stack" className="bg-gray-900 mb-16 pt-16">
+        <div id="stack" className="mb-16 pt-16">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-xl font-semibold tracking-wider text-gray-300 text-center">&lt;TechSkills/&gt;</h2>
                 <p className="mt-2 text-3xl font-extrabold text-gradient tracking-normal sm:text-4xl !leading-normal text-center">
