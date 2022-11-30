@@ -16,12 +16,12 @@ function Footer() {
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
+                        <Link to="/projects" className="text-base font-medium text-white hover:text-gray-300">
                             Projects
                         </Link>
                     </div>
                     <div className="px-5 py-2">
-                        <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
+                        <Link to="/contact" className="text-base font-medium text-white hover:text-gray-300">
                             Contacts
                         </Link>
                     </div>

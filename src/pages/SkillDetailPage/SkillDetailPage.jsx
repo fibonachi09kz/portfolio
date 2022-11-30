@@ -3,6 +3,7 @@ import {useLocation, useParams} from "react-router-dom";
 import {getSkill} from "../../tools/getAnything";
 import {useEffect} from "react";
 import NotFound from "../NotFound/NotFound";
+import {CheckIcon} from "@heroicons/react/solid";
 
 function SkillDetailPage() {
 
@@ -21,20 +22,25 @@ function SkillDetailPage() {
                 ?
                 <>
                     <BackPage title={skill.title} />
-                    <div className="bg-white w-full border shadow overflow-hidden sm:rounded-lg my-10 max-w-7xl mx-auto">
-                        <div className="px-4 py-5 sm:px-6">
-                            <h3 className="text-lg leading-6 font-medium text-gray-900">{skill.title}</h3>
-                        </div>
-                        <div className="border-t border-gray-200 px-4 py-5 sm:px-6">
-
-                            <dl className="grid grid-cols-1 gap-x-4 gap-y-8 sm:grid-cols-5">
+                    <div className="px-6 sm:px-6 lg:px-8">
+                        <div className="bg-gray-800 max-w-7xl mx-auto p-6 sm:p-12 rounded-md">
+                            <div className="max-w-3xl mx-auto text-center">
+                                <h2 className="text-3xl font-extrabold text-white">{skill.title}</h2>
+                                <p className="mt-4 text-lg text-gray-700">
+                                    {skill.description}
+                                </p>
+                            </div>
+                            <dl className="mt-12 space-y-10 sm:space-y-0 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-12 lg:grid-cols-4 lg:gap-x-8">
                                 {skill.elems.map((element) => (
-                                    <div className="sm:col-span-1" key={element.id}>
-                                        <dd className="mt-1 text-sm text-gray-900 pb-2 border-b">{element}</dd>
+                                    <div key={element.id} className="relative">
+                                        <dt>
+                                            <CheckIcon className="absolute h-6 w-6 text-green-500" aria-hidden="true" />
+                                            <p className="ml-9 text-lg leading-6 font-medium text-gray-300">{element.title}</p>
+                                        </dt>
+                                        <dd className="mt-2 ml-9 text-base text-gray-500">{element.description}</dd>
                                     </div>
                                 ))}
                             </dl>
-
                         </div>
                     </div>
                 </>

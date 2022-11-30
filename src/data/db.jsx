@@ -43,176 +43,126 @@ export const skills = [
         id: 1,
         title: 'HTML5',
         extra: 'Tags, Attributes, W3, Semantic',
+        description: '',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/1024px-HTML5_Badge.svg.png',
-        elems: ['Base HTML',
-            'HTML-element',
-            'HTML-attributes',
-            'HTML-text',
-            'HTML-links',
-            'HTML-images',
-            'HTML-tables',
-            'HTML-lists',
-            'HTML Special Characters',
-            'HTML generators',
-            'Semantic elements of HTML5',
-            'Document metadata',
-            'Document sections',
-            'Grouping content',
-            'Text level semantics',
-            'Document edits',
-            'Embedded content',
-            'Links',
-            'Tabular data',
-            'Forms',
-            'Interactive elements',
-            'Scripts',
-            'HTML5 audio',
-            'HTML5 video',
-            'Optional HTML5 markup tags',
-            'HTML5 forms',
-            'HTML5 Content Model'
+        elems: [
+            {
+                title: 'Attributes',
+                description: 'Class, code, data-, contenteditable...'
+            },
+            {
+                title: 'Elements',
+                description: 'Header, footer, div, aside, div, a, link, button...'
+            },
+            {
+                title: 'Miscellaneous',
+                description: 'Microdata, viewport, link types...'
+            },
+            {
+                title: 'W3',
+                description: 'Newest specification, validators, accessibility'
+            },
         ]
     },
     {
         id: 2,
         title: 'CSS3',
         extra: 'Flex, Grid, Animation',
+        description: '',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/240px-CSS3_logo.svg.png',
-        elems: [
-            'CSS Basics',
-            'CSS block model',
-            'Block and lowercase elements',
-            'CSS positioning',
-            'CSS text',
-            'CSS fonts',
-            'CSS links',
-            'CSS tables',
-            'CSS lists',
-            'CSS background',
-            'CSS frame',
-            'CSS content',
-            'CSS colors',
-            'CSS generators',
-            'CSS3 UI',
-            'CSS3-gradient',
-            'CS3-frame',
-            'CSS3-text formatting',
-            'CSS3-block shadow',
-            'CSS3 transitions',
-            'CSS3 transformations',
-            'CSS3 animation',
-            'CSS3 flexbox',
-            'CSS3 columns',
-            'CSS3 3D transformations',
-            'CSS3-Media queries',
-            'CSS3 filters',
-            'CSS Grid',
-            'CSS3 fonts',
-            'CSS3 overflow',
-            'CSS3-writing methods',
-            'Combining and mixing layers',
-            'CSS fragmentation'
-        ]
+        
     },
     {
         id: 3,
         title: 'JavaScript',
         extra: 'OOP, FP, Algorithm, ES6-12',
+        description: '',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/1200px-Unofficial_JavaScript_logo_2.svg.png',
-        elems: [
-            'JavaScript basics',
-            'Grammar and types',
-            'Control flow and error handling',
-            'Loops and iteration',
-            'Functions',
-            'Expressions and operators',
-            'Numbers and dates',
-            'Text formatting',
-            'Regular expressions',
-            'Indexed collections',
-            'Keyed collections',
-            'Working with objects',
-            'Using classes',
-            'Using promises',
-            'Iterators and generators',
-            'JavaScript modules',
-            'Client-side JavaScript frameworks',
-            'Client-side web APIs',
-            'JavaScript data structures',
-            'Equality comparisons and sameness',
-            'Closures',
-            'Inheritance and the prototype chain',
-            'Strict mode',
-            'JavaScript typed arrays',
-            'Memory Management',
-            'Concurrency model and Event Loop'
-        ]
+        
     },
     {
         id: 4,
         title: 'TypeScript',
         extra: 'Types, Generics, Interfaces, Decorators',
+        description: '',
         imageUrl:
             'https://seeklogo.com/images/T/typescript-logo-B29A3F462D-seeklogo.com.png',
+        
     },
     {
         id: 5,
         title: 'React',
         extra: 'Classes, Hooks, Framer',
+        description: '',
         imageUrl:
-            'https://res.cloudinary.com/practicaldev/image/fetch/s--1mtEvyef--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://cdn.hashnode.com/res/hashnode/image/upload/v1647490619965/P1dsNgj-f1.png',
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png',
+        
     },
     {
         id: 6,
         title: 'Redux',
         extra: 'RTK Query, Reducer, Thunks',
+        description: '',
         imageUrl:
             'https://raw.githubusercontent.com/reduxjs/redux/master/logo/logo.png',
+        
     },
     {
         id: 7,
         title: 'Figma',
         extra: 'Prototypes, Canvas, UI Kit',
+        description: '',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png',
+        
     },
     {
         id: 8,
         title: 'Spline',
         extra: '3D Modeling, Animation',
+        description: '',
         imageUrl:
-            'https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/npitztetvyezgsmh6yum',
+            'https://june-changelog.s3.eu-central-1.amazonaws.com/spline_icon_twitter_removebg_preview_db2832210b.png',
+        
     },
     {
         id: 9,
         title: 'Git',
         extra: 'GitHub, GitLab, GitHub Copilot',
+        description: '',
         imageUrl:
-            'https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg',
+            'https://img.softline.com/mcf/46f7374595b031b43766defa79847ebe/205975d32898c2059b02/scale-dec-294x294.png',
+        
     },
     {
         id: 10,
         title: 'Bootstrap',
         extra: 'UI, Components',
+        description: '',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Bootstrap_logo.svg/1200px-Bootstrap_logo.svg.png',
+        
     },
     {
         id: 11,
         title: 'Tailwind',
         extra: 'UI, Components',
+        description: '',
         imageUrl:
             'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/2048px-Tailwind_CSS_Logo.svg.png',
+        
     },
     {
         id: 12,
         title: 'MUI',
         extra: 'UI, Components',
+        description: '',
         imageUrl:
             'https://mui.com/static/logo.png',
+        
     }
 ]
 
@@ -240,7 +190,6 @@ export const bioInfo = {
     job: {
         category: 'Web development',
         title: 'Frontend developer',
-        salary: '1500$',
         relocation: true
     },
     stats: {

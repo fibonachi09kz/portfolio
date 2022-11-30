@@ -41,7 +41,7 @@ function HeaderNavigation() {
                                 <Link to="/about-me" className="text-base font-medium text-white hover:text-gray-300">
                                     About me
                                 </Link>
-                                <Link to="/" className="text-base font-medium text-white hover:text-gray-300">
+                                <Link to="/projects" className="text-base font-medium text-white hover:text-gray-300">
                                     Projects
                                 </Link>
                                 <Link to="/contact" className="text-base font-medium text-white hover:text-gray-300">
@@ -87,7 +87,7 @@ function HeaderNavigation() {
                                     <Link to="/about-me" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">
                                         About me
                                     </Link>
-                                    <Link to="/" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">
+                                    <Link to="/projects" onClick={() => buttonRef.current?.click()} className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">
                                         Projects
                                     </Link>
                                     <Link to="/contact" onClick={() => buttonRef.current?.click()}  className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-gray-800">

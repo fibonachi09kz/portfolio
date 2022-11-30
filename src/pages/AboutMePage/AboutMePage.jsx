@@ -87,18 +87,34 @@ function AboutMePage({props}) {
 										</div>
 										<div className="sm:col-span-1">
 											<dt className="text-sm font-medium text-white">
-												Email address
+												Country
 											</dt>
 											<dd className="mt-1 text-sm text-gray-400">
-												<a className="text-cyan-600" href={"mailto:" + bioInfo.contacts.email}>{bioInfo.contacts.email}</a>
+												Kazakhstan
 											</dd>
 										</div>
 										<div className="sm:col-span-1">
 											<dt className="text-sm font-medium text-white">
-												Salary
+												Remote work status
+											</dt>
+											<dd className="mt-1 text-sm text-green-600">
+												Ready
+											</dd>
+										</div>
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-white">
+												Relocation status
+											</dt>
+											<dd className="mt-1 text-sm text-green-600">
+												Ready
+											</dd>
+										</div>
+										<div className="sm:col-span-1">
+											<dt className="text-sm font-medium text-white">
+												Email address
 											</dt>
 											<dd className="mt-1 text-sm text-gray-400">
-												$1500 / month
+												<a className="text-cyan-600" href={"mailto:" + bioInfo.contacts.email}>{bioInfo.contacts.email}</a>
 											</dd>
 										</div>
 										<div className="sm:col-span-1">
