@@ -26,6 +26,7 @@
     "react-particles": "^2.5.3",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "swiper": "^8.4.5",
     "three": "^0.146.0",
     "tsparticles": "^2.5.3",
     "uuid": "^8.3.2",

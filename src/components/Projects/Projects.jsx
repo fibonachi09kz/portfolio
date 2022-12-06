@@ -1,20 +1,62 @@
-import {v4 as uuidv4} from "uuid";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+
+import {projectList} from "../../data/db";
+
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faSquareGithub} from "@fortawesome/free-brands-svg-icons";
 import {faArrowUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
-import {projectList} from "../../data/db";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "./Projects.css"
+import {useEffect, useState} from "react";
+
 
 function Projects () {
+    
+    // const [loading, setLoading] = useState(false);
+    //
+    // useEffect(() => {
+    //     fetch("https://martians-portfolio.000webhostapp.com/wp-json/wp/v2/posts")
+    //         .then(res => res.json())
+    //         .then(res => console.log(res))
+    // }, [])
+    
+    
+    
+    
     return (
         <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:pt-16 mb-16">
             <h2 className="text-xl font-semibold tracking-wider text-gray-300 text-center">&lt;Projects/&gt;</h2>
             <p className="mt-2 text-3xl font-extrabold text-gradient tracking-normal sm:text-4xl !leading-normal text-center">Projects List</p>
-            <ul className="grid mt-12 grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-                {projectList.map((item) => (
-                    <li
-                        key={uuidv4()}
-                        className="col-span-1 flex flex-col text-center bg-gray-800 rounded-lg shadow-sm divide-y divide-gray-900"
-                    >
+            <Swiper
+                slidesPerView={1}
+                spaceBetween={20}
+                navigation={true}
+                pagination={{
+                    clickable: true,
+                }}
+                grabCursor={true}
+                mousewheel={true}
+                keyboard={true}
+                loop={true}
+                breakpoints={{
+                    640: {
+                        slidesPerView: 2
+                    },
+                    768: {
+                        slidesPerView: 3
+                    },
+                    1024: {
+                        slidesPerView: 4
+                    },
+                }}
+                modules={[Navigation, Pagination, Mousewheel, Keyboard]}
+                className="mt-12"
+            >
+                {projectList.map(( item) => (
+                    <SwiperSlide key={item.id} className='flex flex-col text-center bg-gray-800 rounded-lg shadow-sm divide-y divide-gray-900'>
                         <div className="flex-1 flex flex-col">
                             <img className="w-full h-40 flex-shrink-0 mx-auto rounded-t-lg object-cover" src={item.imageUrl} alt="" />
                             <h3 className="mt-6 text-white text-sm font-medium px-8">{item.name}</h3>
@@ -22,9 +64,9 @@ function Projects () {
                                 <dd className="text-gray-400 text-sm">{item.title}</dd>
                                 <dd className="mt-3 flex-wrap flex gap-1">
                                     {item.categories.map((cat) => (
-                                        <span key={uuidv4()} className="px-2 py-1 text-indigo-600 text-xs font-medium bg-gray-700 rounded-full">
-                                            {cat}
-                                        </span>
+                                        <span key={cat.id} className="px-2 py-1 text-indigo-300 text-xs font-medium bg-gray-700 rounded-md">
+                                        {cat.name}
+                                    </span>
                                     ))}
                                 </dd>
                             </dl>
@@ -51,9 +93,9 @@ function Projects () {
                                 </div>
                             </div>
                         </div>
-                    </li>
+                    </SwiperSlide>
                 ))}
-            </ul>
+            </Swiper>
         </div>
     )
 }

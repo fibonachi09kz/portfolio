@@ -2,40 +2,64 @@ import avatar from '../assets/img/avatar.jpg';
 
 export const projectList = [
     {
+        id: 1,
         name: 'GitHub Repos Finder',
         title: 'Find github repo with account name',
-        categories: ['react', 'typescript', 'bootstrap'],
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'tailwind'},
+            {id:4, name: 'bootstrap'}
+        ],
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
+            'https://i.ibb.co/tzV846X/1.png',
     },
     {
+        id: 2,
         name: 'Jane Cooper',
         title: 'Paradigm Representative',
-        categories: ['react', 'typescript', 'tailwind', 'bootstrap'],
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'tailwind'},
+            {id:4, name: 'bootstrap'}
+        ],
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
+            'https://i.ibb.co/tzV846X/1.png',
     },
     {
+        id: 3,
         name: 'Jane Cooper',
         title: 'Paradigm Representative',
-        categories: ['react', 'typescript', 'tailwind', 'bootstrap'],
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'tailwind'},
+            {id:4, name: 'bootstrap'}
+        ],
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
+            'https://i.ibb.co/tzV846X/1.png',
     },
     {
+        id: 4,
         name: 'Jane Cooper',
         title: 'Paradigm Representative',
-        categories: ['react', 'typescript', 'tailwind', 'bootstrap'],
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'tailwind'},
+            {id:4, name: 'bootstrap'}
+        ],
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
         imageUrl:
-            'https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image.png',
+            'https://i.ibb.co/tzV846X/1.png',
     }
 ]
 export const skills = [
