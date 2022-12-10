@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper";
+import {Link} from "react-router-dom";
 
 import {projectList} from "../../data/db";
 
@@ -83,13 +84,13 @@ function Projects () {
                                     </a>
                                 </div>
                                 <div className="-ml-px w-0 flex-1 flex">
-                                    <a
+                                    <Link to={`projects/${item.id}`}
                                         href={`tel:${item.telephone}`}
                                         className="transition-all relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-300 font-medium rounded-br-lg hover:bg-gray-600"
                                     >
                                         <FontAwesomeIcon className="text-lg" icon={faArrowUpRightFromSquare} />
-                                        <span className="ml-3">Link</span>
-                                    </a>
+                                        <span className="ml-3">Detail</span>
+                                    </Link>
                                 </div>
                             </div>
                         </div>

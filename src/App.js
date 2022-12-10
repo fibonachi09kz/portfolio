@@ -10,6 +10,8 @@ import ContactPage from "./pages/ContactPage/ContactPage";
 import AboutMePage from "./pages/AboutMePage/AboutMePage";
 import NotFound from "./pages/NotFound/NotFound";
 import ParticlesComp from "./components/ParticlesComp/ParticlesComp";
+import ProjectDetailPage from "./pages/ProjectDetailPage/ProjectDetailPage";
+import ProjectsPage from "./pages/ProjectsPage/ProjectsPage";
 
 
 
@@ -46,7 +48,7 @@ export default function App() {
                             <Route path="skills/:id" element={<SkillDetailPage />} />
                     
                             {/*<Route path="projects" element={<ProjectsPage />} />*/}
-                            {/*<Route path="projects/:id" element={<ProjectDetailPage />} />*/}
+                            <Route path="projects/:id" element={<ProjectDetailPage />} />
                     
                             <Route path="contact" element={<ContactPage />} />
                             <Route path='*' element={<NotFound />} />
