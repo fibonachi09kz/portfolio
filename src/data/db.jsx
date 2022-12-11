@@ -6,9 +6,9 @@ export const projectList = [
         name: 'GitHub Repos Finder',
         title: 'Find github repo with account name',
         categories: [
-            {id:1, name: 'react'},
+            {id:1, name: 'html5'},
             {id:2, name: 'typescript'},
-            {id:3, name: 'tailwind'},
+            {id:3, name: 'next'},
             {id:4, name: 'bootstrap'}
         ],
         email: 'janecooper@example.com',
@@ -23,7 +23,7 @@ export const projectList = [
         categories: [
             {id:1, name: 'react'},
             {id:2, name: 'typescript'},
-            {id:3, name: 'tailwind'},
+            {id:3, name: 'spline'},
             {id:4, name: 'bootstrap'}
         ],
         email: 'janecooper@example.com',
@@ -37,9 +37,9 @@ export const projectList = [
         title: 'Paradigm Representative',
         categories: [
             {id:1, name: 'react'},
-            {id:2, name: 'typescript'},
+            {id:2, name: 'css3'},
             {id:3, name: 'tailwind'},
-            {id:4, name: 'bootstrap'}
+            {id:4, name: 'figma'}
         ],
         email: 'janecooper@example.com',
         telephone: '+1-202-555-0170',
@@ -53,7 +53,7 @@ export const projectList = [
         categories: [
             {id:1, name: 'react'},
             {id:2, name: 'typescript'},
-            {id:3, name: 'tailwind'},
+            {id:3, name: 'redux'},
             {id:4, name: 'bootstrap'}
         ],
         email: 'janecooper@example.com',

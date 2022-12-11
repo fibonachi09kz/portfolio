@@ -47,7 +47,7 @@ export default function App() {
                             <Route path="skills" element={<SkillsPage />} />
                             <Route path="skills/:id" element={<SkillDetailPage />} />
                     
-                            {/*<Route path="projects" element={<ProjectsPage />} />*/}
+                            <Route path="projects" element={<ProjectsPage />} />
                             <Route path="projects/:id" element={<ProjectDetailPage />} />
                     
                             <Route path="contact" element={<ContactPage />} />

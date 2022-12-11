@@ -10,7 +10,6 @@ import {faArrowUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "./Projects.css"
 import {useEffect, useState} from "react";
 
 
