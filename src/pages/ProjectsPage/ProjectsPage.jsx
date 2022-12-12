@@ -1,9 +1,12 @@
 import BackPage from "../../components/BackPage/BackPage";
 import {projectList} from "../../data/db";
 import React, {useState} from "react";
-import {skills} from "../../data/db";
-import ProjectsPageList from "../../components/ProjectsPageList/ProjectsPageList";
 import ProjectsPageFilters from "../../components/ProjectsPageFilters/ProjectsPageFilters";
+import {v4 as uuidv4} from "uuid";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faSquareGithub} from "@fortawesome/free-brands-svg-icons";
+import {Link} from "react-router-dom";
+import {faArrowUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
 
 
 function ProjectsPage({props}) {
@@ -29,28 +32,6 @@ function ProjectsPage({props}) {
 			}
 		})
 		
-		
-		
-		if (filters.length > 0) {
-			let stat = true
-			let result = projects.filter(elem => {
-
-				elem.categories.forEach(cat => {
-					
-					filters.forEach(cur => {
-					
-					
-					})
-
-				})
-				
-				return stat
-			})
-			setProjects(result)
-		} else {
-			setProjects(projectList)
-		}
-		
 	}
 	
 	return (
@@ -58,21 +39,59 @@ function ProjectsPage({props}) {
 			<BackPage title={props?.title || 'Projects'} />
 			<div className="flex-grow py-4">
 				<ProjectsPageFilters addFilter={addFilter} />
-				<ProjectsPageList projects={projects} />
-				<div className="sm:col-span-2 mt-8 flex flex-col sm:flex-row sm:justify-center items-center gap-4 px-6">
-					<button type="button"
-							className="gap-1 w-full inline-flex items-center justify-center px-6 py-3 rounded-md shadow-sm text-base font-medium text-white sm:w-auto bg-gray-700 hover:bg-gradient-to-r hover:from-indigo-700 hover:via-sky-800 hover:to-purple-600 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-white disabled:cursor-not-allowed disabled:opacity-50"
-							disabled={loader}
-					>
-						Show more
-						{
-							loader ?
-								<svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 form-btn__loading" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-									<path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-								</svg> : ''
+				<ul className="max-w-7xl mx-auto px-6 w-full grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+					{projects.filter(elem => {
+						if (filters.length > 0) {
+							return elem.categories.some(cat => {
+								return filters.indexOf(cat.name) !== -1
+							})
+						} else {
+							return true
 						}
-					</button>
-				</div>
+					}).map((item) => (
+						<li
+							key={uuidv4()}
+							className="col-span-1 flex flex-col text-center bg-gray-800 rounded-lg shadow-sm divide-y divide-gray-900"
+						>
+							<div className="flex-1 flex flex-col">
+								<img className="w-full h-40 flex-shrink-0 mx-auto rounded-t-lg object-cover" src={item.imageUrl} alt="" />
+								<h3 className="mt-6 text-white text-sm font-medium px-8">{item.name}</h3>
+								<dl className="mt-1 flex-grow flex flex-col justify-between px-4 pb-4">
+									<dd className="text-gray-400 text-sm">{item.title}</dd>
+									<dd className="mt-3 flex-wrap flex gap-1">
+										{item.categories.map((cat) => (
+											<span key={cat.id} className="px-2 py-1 text-indigo-300 text-xs font-medium bg-gray-700 rounded-md">
+                                        {cat.name}
+                                    </span>
+										))}
+									</dd>
+								</dl>
+							</div>
+							<div>
+								<div className="-mt-px flex divide-x divide-gray-900">
+									<div className="w-0 flex-1 flex">
+										<a
+											href={`mailto:${item.email}`}
+											className="transition-all relative -mr-px w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-300 font-medium rounded-bl-lg hover:bg-gray-600"
+										>
+											<FontAwesomeIcon className="text-lg" icon={faSquareGithub} />
+											<span className="ml-3">GitHub</span>
+										</a>
+									</div>
+									<div className="-ml-px w-0 flex-1 flex">
+										<Link to={`/projects/${item.id}`}
+											  href={`tel:${item.telephone}`}
+											  className="transition-all relative w-0 flex-1 inline-flex items-center justify-center py-4 text-sm text-gray-300 font-medium rounded-br-lg hover:bg-gray-600"
+										>
+											<FontAwesomeIcon className="text-lg" icon={faArrowUpRightFromSquare} />
+											<span className="ml-3">Detail</span>
+										</Link>
+									</div>
+								</div>
+							</div>
+						</li>
+					))}
+				</ul>
 			</div>
 		</>
 	)

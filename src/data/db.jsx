@@ -60,6 +60,81 @@ export const projectList = [
         telephone: '+1-202-555-0170',
         imageUrl:
             'https://i.ibb.co/tzV846X/1.png',
+    },
+    {
+        id: 5,
+        name: 'Jane Cooper',
+        title: 'Paradigm Representative',
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'redux'},
+            {id:4, name: 'bootstrap'}
+        ],
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://i.ibb.co/tzV846X/1.png',
+    },
+    {
+        id: 6,
+        name: 'Jane Cooper',
+        title: 'Paradigm Representative',
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'redux'},
+            {id:4, name: 'bootstrap'}
+        ],
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://i.ibb.co/tzV846X/1.png',
+    },
+    {
+        id: 7,
+        name: 'Jane Cooper',
+        title: 'Paradigm Representative',
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'redux'},
+            {id:4, name: 'bootstrap'}
+        ],
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://i.ibb.co/tzV846X/1.png',
+    },
+    {
+        id: 8,
+        name: 'Jane Cooper',
+        title: 'Paradigm Representative',
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'redux'},
+            {id:4, name: 'bootstrap'}
+        ],
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://i.ibb.co/tzV846X/1.png',
+    },
+    {
+        id: 9,
+        name: 'Jane Cooper',
+        title: 'Paradigm Representative',
+        categories: [
+            {id:1, name: 'react'},
+            {id:2, name: 'typescript'},
+            {id:3, name: 'redux'},
+            {id:4, name: 'bootstrap'}
+        ],
+        email: 'janecooper@example.com',
+        telephone: '+1-202-555-0170',
+        imageUrl:
+            'https://i.ibb.co/tzV846X/1.png',
     }
 ]
 export const skills = [

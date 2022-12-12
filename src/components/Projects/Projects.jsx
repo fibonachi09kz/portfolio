@@ -10,26 +10,19 @@ import {faArrowUpRightFromSquare} from "@fortawesome/free-solid-svg-icons";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import {useEffect, useState} from "react";
 
 
 function Projects () {
-    
-    // const [loading, setLoading] = useState(false);
-    //
-    // useEffect(() => {
-    //     fetch("https://martians-portfolio.000webhostapp.com/wp-json/wp/v2/posts")
-    //         .then(res => res.json())
-    //         .then(res => console.log(res))
-    // }, [])
-    
-    
-    
-    
+
     return (
         <div id="projects" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 sm:pt-16 mb-16">
             <h2 className="text-xl font-semibold tracking-wider text-gray-300 text-center">&lt;Projects/&gt;</h2>
             <p className="mt-2 text-3xl font-extrabold text-gradient tracking-normal sm:text-4xl !leading-normal text-center">Projects List</p>
+            <div className="flex justify-end">
+                <Link to="/projects" className="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-600 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500">
+                    View all
+                </Link>
+            </div>
             <Swiper
                 slidesPerView={1}
                 spaceBetween={20}
@@ -53,7 +46,7 @@ function Projects () {
                     },
                 }}
                 modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-                className="mt-12"
+                className="mt-6"
             >
                 {projectList.map(( item) => (
                     <SwiperSlide key={item.id} className='flex flex-col text-center bg-gray-800 rounded-lg shadow-sm divide-y divide-gray-900'>

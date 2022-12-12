@@ -5,7 +5,7 @@ function ProjectsPageFilters(props) {
 	return (
 		<div className="max-w-7xl mx-auto px-6 mb-10">
 			<h2 className="text-white text-xl font-normal mb-3">Filter by technology</h2>
-			<span className="flex items-center flex-wrap gap-5">
+			<span className="grid grid-cols-2 sm:flex items-center flex-wrap gap-2 sm:gap-5">
 				{skills.map((skill) => (
 					<button
 						key={skill.id}

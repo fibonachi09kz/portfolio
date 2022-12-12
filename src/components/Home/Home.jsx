@@ -5,15 +5,18 @@ import Projects from "../Projects/Projects";
 import ContactForm from "../ContactForm/ContactForm";
 import {AtomAnim} from "../AtomAnim/AtomAnim";
 import {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
 
 
 function Home() {
     
     const [isMobile, setIsMobile] = useState(false);
+    const { pathname } = useLocation();
     useEffect(() => {
         let isNonAnim = window.innerWidth <= 1024;
         setIsMobile(isNonAnim)
-    }, [])
+        window.scrollTo(0, 0);
+    }, [pathname])
     
     
     

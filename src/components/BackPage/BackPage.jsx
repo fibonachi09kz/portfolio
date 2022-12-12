@@ -1,7 +1,15 @@
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import {useEffect} from "react";
 
 
 function BackPage({title}) {
+    
+    const { pathname } = useLocation();
+    
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+    
     return(
         <div className="py-4 md:py-12">
             <div className="max-w-7xl mx-auto flex items-center justify-between px-6">

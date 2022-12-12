@@ -10,12 +10,6 @@ function SkillDetailPage() {
     let params = useParams();
     let skill = getSkill(params.id) || undefined;
 
-    const { pathname } = useLocation();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [pathname]);
-
     return(
         <>
             {skill.elems
