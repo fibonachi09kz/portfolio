@@ -86,12 +86,12 @@ code {
     left: 0;
     border-radius: 0 6px 6px 0;
 }
-#projects .swiper-button-next:after, .swiper-button-prev:after {
+#projects .swiper-button-next:after, #projects .swiper-button-prev:after {
     font-size: 26px;
     color: #5d59bd;
     transition: 0.15s all;
 }
-#projects .swiper-button-next:active:after, .swiper-button-prev:active:after {
+#projects .swiper-button-next:active:after, #projects .swiper-button-prev:active:after {
     transform: scale(0.7);
 }
 #projects .swiper {
